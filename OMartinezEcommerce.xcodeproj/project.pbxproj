@@ -1,0 +1,523 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CF99A8D737FB3748DD2DD10 /* Pods_OMartinezEcommerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6831F5B7B9467D5306CF392 /* Pods_OMartinezEcommerce.framework */; };
+		EB49B1C8295CE91900D7BF5E /* ProductoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB49B1C7295CE91900D7BF5E /* ProductoViewModel.swift */; };
+		EB49B1CA295CF0DF00D7BF5E /* Producto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB49B1C9295CF0DF00D7BF5E /* Producto.swift */; };
+		EB49B1CC295CF19600D7BF5E /* Proveedor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB49B1CB295CF19600D7BF5E /* Proveedor.swift */; };
+		EB49B1CE295CF1D600D7BF5E /* Departamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB49B1CD295CF1D600D7BF5E /* Departamento.swift */; };
+		EB49B1D0295CF21700D7BF5E /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB49B1CF295CF21700D7BF5E /* Area.swift */; };
+		EB49B1D2295CF26B00D7BF5E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB49B1D1295CF26B00D7BF5E /* Result.swift */; };
+		EB9DCCB2295BC2D20016D740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9DCCB1295BC2D20016D740 /* AppDelegate.swift */; };
+		EB9DCCB4295BC2D20016D740 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9DCCB3295BC2D20016D740 /* SceneDelegate.swift */; };
+		EB9DCCB6295BC2D20016D740 /* ProductoFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9DCCB5295BC2D20016D740 /* ProductoFormController.swift */; };
+		EB9DCCB9295BC2D20016D740 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB9DCCB7295BC2D20016D740 /* Main.storyboard */; };
+		EB9DCCBC295BC2D20016D740 /* OMartinezEcommerce.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB9DCCBA295BC2D20016D740 /* OMartinezEcommerce.xcdatamodeld */; };
+		EB9DCCBE295BC2D40016D740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB9DCCBD295BC2D40016D740 /* Assets.xcassets */; };
+		EB9DCCC1295BC2D40016D740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB9DCCBF295BC2D40016D740 /* LaunchScreen.storyboard */; };
+		EB9DCCC9295BC3060016D740 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9DCCC8295BC3060016D740 /* DB.swift */; };
+		EBCA56DE295E694800F901BC /* ProductoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA56DC295E694800F901BC /* ProductoTableViewCell.swift */; };
+		EBCA56DF295E694800F901BC /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBCA56DD295E694800F901BC /* TableViewCell.xib */; };
+		EBCA56E1295E6A5D00F901BC /* GetAllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA56E0295E6A5D00F901BC /* GetAllTableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		16EEED9872DF317CA80EE882 /* Pods-OMartinezEcommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMartinezEcommerce.release.xcconfig"; path = "Target Support Files/Pods-OMartinezEcommerce/Pods-OMartinezEcommerce.release.xcconfig"; sourceTree = "<group>"; };
+		2B625A4CD8B9C9DCAF3780D2 /* Pods-OMartinezEcommerce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMartinezEcommerce.debug.xcconfig"; path = "Target Support Files/Pods-OMartinezEcommerce/Pods-OMartinezEcommerce.debug.xcconfig"; sourceTree = "<group>"; };
+		A6831F5B7B9467D5306CF392 /* Pods_OMartinezEcommerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OMartinezEcommerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB49B1C7295CE91900D7BF5E /* ProductoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoViewModel.swift; sourceTree = "<group>"; };
+		EB49B1C9295CF0DF00D7BF5E /* Producto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producto.swift; sourceTree = "<group>"; };
+		EB49B1CB295CF19600D7BF5E /* Proveedor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proveedor.swift; sourceTree = "<group>"; };
+		EB49B1CD295CF1D600D7BF5E /* Departamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departamento.swift; sourceTree = "<group>"; };
+		EB49B1CF295CF21700D7BF5E /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
+		EB49B1D1295CF26B00D7BF5E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		EB9DCCAE295BC2D20016D740 /* OMartinezEcommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMartinezEcommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB9DCCB1295BC2D20016D740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EB9DCCB3295BC2D20016D740 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EB9DCCB5295BC2D20016D740 /* ProductoFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoFormController.swift; sourceTree = "<group>"; };
+		EB9DCCB8295BC2D20016D740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EB9DCCBB295BC2D20016D740 /* OMartinezEcommerce.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OMartinezEcommerce.xcdatamodel; sourceTree = "<group>"; };
+		EB9DCCBD295BC2D40016D740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB9DCCC0295BC2D40016D740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EB9DCCC2295BC2D40016D740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB9DCCC8295BC3060016D740 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		EBCA56DC295E694800F901BC /* ProductoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoTableViewCell.swift; sourceTree = "<group>"; };
+		EBCA56DD295E694800F901BC /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		EBCA56E0295E6A5D00F901BC /* GetAllTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTableViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB9DCCAB295BC2D20016D740 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CF99A8D737FB3748DD2DD10 /* Pods_OMartinezEcommerce.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		308F67B73B1657831AF80647 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B625A4CD8B9C9DCAF3780D2 /* Pods-OMartinezEcommerce.debug.xcconfig */,
+				16EEED9872DF317CA80EE882 /* Pods-OMartinezEcommerce.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8E94AC1A1F51B7A95859F835 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6831F5B7B9467D5306CF392 /* Pods_OMartinezEcommerce.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB9DCCA5295BC2D20016D740 = {
+			isa = PBXGroup;
+			children = (
+				EB9DCCB0295BC2D20016D740 /* OMartinezEcommerce */,
+				EB9DCCAF295BC2D20016D740 /* Products */,
+				308F67B73B1657831AF80647 /* Pods */,
+				8E94AC1A1F51B7A95859F835 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EB9DCCAF295BC2D20016D740 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB9DCCAE295BC2D20016D740 /* OMartinezEcommerce.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB9DCCB0295BC2D20016D740 /* OMartinezEcommerce */ = {
+			isa = PBXGroup;
+			children = (
+				EB9DCCCD295BC3380016D740 /* Controller */,
+				EB9DCCCC295BC32C0016D740 /* View */,
+				EB9DCCCB295BC31E0016D740 /* ViewModel */,
+				EB9DCCCA295BC3100016D740 /* Model */,
+				EB9DCCB1295BC2D20016D740 /* AppDelegate.swift */,
+				EB9DCCB3295BC2D20016D740 /* SceneDelegate.swift */,
+				EB9DCCBD295BC2D40016D740 /* Assets.xcassets */,
+				EB9DCCC2295BC2D40016D740 /* Info.plist */,
+				EB9DCCBA295BC2D20016D740 /* OMartinezEcommerce.xcdatamodeld */,
+			);
+			path = OMartinezEcommerce;
+			sourceTree = "<group>";
+		};
+		EB9DCCCA295BC3100016D740 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB49B1C9295CF0DF00D7BF5E /* Producto.swift */,
+				EB49B1CB295CF19600D7BF5E /* Proveedor.swift */,
+				EB49B1CD295CF1D600D7BF5E /* Departamento.swift */,
+				EB49B1CF295CF21700D7BF5E /* Area.swift */,
+				EB49B1D1295CF26B00D7BF5E /* Result.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB9DCCCB295BC31E0016D740 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EB9DCCC8295BC3060016D740 /* DB.swift */,
+				EB49B1C7295CE91900D7BF5E /* ProductoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EB9DCCCC295BC32C0016D740 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB9DCCBF295BC2D40016D740 /* LaunchScreen.storyboard */,
+				EB9DCCB7295BC2D20016D740 /* Main.storyboard */,
+				EBCA56DD295E694800F901BC /* TableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EB9DCCCD295BC3380016D740 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBCA56DC295E694800F901BC /* ProductoTableViewCell.swift */,
+				EB9DCCB5295BC2D20016D740 /* ProductoFormController.swift */,
+				EBCA56E0295E6A5D00F901BC /* GetAllTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB9DCCAD295BC2D20016D740 /* OMartinezEcommerce */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB9DCCC5295BC2D40016D740 /* Build configuration list for PBXNativeTarget "OMartinezEcommerce" */;
+			buildPhases = (
+				6D2543F44AE52C1DF5A38D26 /* [CP] Check Pods Manifest.lock */,
+				EB9DCCAA295BC2D20016D740 /* Sources */,
+				EB9DCCAB295BC2D20016D740 /* Frameworks */,
+				EB9DCCAC295BC2D20016D740 /* Resources */,
+				CBBD515FFBBC7C1B81B58807 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OMartinezEcommerce;
+			productName = OMartinezEcommerce;
+			productReference = EB9DCCAE295BC2D20016D740 /* OMartinezEcommerce.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB9DCCA6295BC2D20016D740 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					EB9DCCAD295BC2D20016D740 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = EB9DCCA9295BC2D20016D740 /* Build configuration list for PBXProject "OMartinezEcommerce" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB9DCCA5295BC2D20016D740;
+			productRefGroup = EB9DCCAF295BC2D20016D740 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB9DCCAD295BC2D20016D740 /* OMartinezEcommerce */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB9DCCAC295BC2D20016D740 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB9DCCC1295BC2D40016D740 /* LaunchScreen.storyboard in Resources */,
+				EBCA56DF295E694800F901BC /* TableViewCell.xib in Resources */,
+				EB9DCCBE295BC2D40016D740 /* Assets.xcassets in Resources */,
+				EB9DCCB9295BC2D20016D740 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6D2543F44AE52C1DF5A38D26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OMartinezEcommerce-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBBD515FFBBC7C1B81B58807 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OMartinezEcommerce/Pods-OMartinezEcommerce-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OMartinezEcommerce/Pods-OMartinezEcommerce-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OMartinezEcommerce/Pods-OMartinezEcommerce-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB9DCCAA295BC2D20016D740 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBCA56DE295E694800F901BC /* ProductoTableViewCell.swift in Sources */,
+				EB49B1D0295CF21700D7BF5E /* Area.swift in Sources */,
+				EB49B1CC295CF19600D7BF5E /* Proveedor.swift in Sources */,
+				EB9DCCBC295BC2D20016D740 /* OMartinezEcommerce.xcdatamodeld in Sources */,
+				EB9DCCB6295BC2D20016D740 /* ProductoFormController.swift in Sources */,
+				EBCA56E1295E6A5D00F901BC /* GetAllTableViewController.swift in Sources */,
+				EB49B1CE295CF1D600D7BF5E /* Departamento.swift in Sources */,
+				EB49B1CA295CF0DF00D7BF5E /* Producto.swift in Sources */,
+				EB9DCCB2295BC2D20016D740 /* AppDelegate.swift in Sources */,
+				EB9DCCC9295BC3060016D740 /* DB.swift in Sources */,
+				EB49B1C8295CE91900D7BF5E /* ProductoViewModel.swift in Sources */,
+				EB9DCCB4295BC2D20016D740 /* SceneDelegate.swift in Sources */,
+				EB49B1D2295CF26B00D7BF5E /* Result.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EB9DCCB7295BC2D20016D740 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB9DCCB8295BC2D20016D740 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EB9DCCBF295BC2D40016D740 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB9DCCC0295BC2D40016D740 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB9DCCC3295BC2D40016D740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EB9DCCC4295BC2D40016D740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB9DCCC6295BC2D40016D740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B625A4CD8B9C9DCAF3780D2 /* Pods-OMartinezEcommerce.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y9R8RP33KR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OMartinezEcommerce/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.digis.OMartinezEcommerce;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB9DCCC7295BC2D40016D740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16EEED9872DF317CA80EE882 /* Pods-OMartinezEcommerce.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y9R8RP33KR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OMartinezEcommerce/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.digis.OMartinezEcommerce;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB9DCCA9295BC2D20016D740 /* Build configuration list for PBXProject "OMartinezEcommerce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB9DCCC3295BC2D40016D740 /* Debug */,
+				EB9DCCC4295BC2D40016D740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB9DCCC5295BC2D40016D740 /* Build configuration list for PBXNativeTarget "OMartinezEcommerce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB9DCCC6295BC2D40016D740 /* Debug */,
+				EB9DCCC7295BC2D40016D740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EB9DCCBA295BC2D20016D740 /* OMartinezEcommerce.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EB9DCCBB295BC2D20016D740 /* OMartinezEcommerce.xcdatamodel */,
+			);
+			currentVersion = EB9DCCBB295BC2D20016D740 /* OMartinezEcommerce.xcdatamodel */;
+			path = OMartinezEcommerce.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EB9DCCA6295BC2D20016D740 /* Project object */;
+}
