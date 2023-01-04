@@ -34,6 +34,11 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
         validar()
         // Do any additional setup after loading the view.
     }
+    
+    func convertImageToBase64(img: UIImage) -> String{
+        return img.pngData()?.base64EncodedString() ?? ""
+    }
+    
     func validar(){
         if idProducto == 0{
             ActionBtn.setTitle("Agregar", for: UIControl.State.normal)
@@ -67,9 +72,10 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBAction func imageButton(_ sender: UIButton) {
         self.present(imagePicker, animated: true)
+        let imgString = convertImageToBase64(img: imageView.image!)
+        print("BASE64: \(imgString)")
     }
     @IBAction func ActionButton(_ sender: UIButton) {
-        
         let alertVacio = UIAlertController(title: "Confirmación", message: "Campo vacio", preferredStyle: .alert)
         let alertIncorrect = UIAlertController(title: "Confirmación", message: "Ocurrio un error", preferredStyle: .alert)
         let alertCorrect = UIAlertController(title: "Confirmación", message: "Ejecucion Correcta", preferredStyle: .alert)
