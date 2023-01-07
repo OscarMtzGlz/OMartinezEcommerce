@@ -10,6 +10,7 @@ import SwipeCellKit
 
 class ProductoTableViewCell: SwipeTableViewCell {
 
+    @IBOutlet weak var ImageUser: UIImageView!
     @IBOutlet weak var Descripcionlbl: UILabel!
     @IBOutlet weak var Stocklbl: UILabel!
     @IBOutlet weak var PrecioUnitariolbl: UILabel!

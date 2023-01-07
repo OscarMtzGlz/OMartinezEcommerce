@@ -52,6 +52,8 @@
                                 <rect key="frame" x="5" y="6.6666666666666572" width="150" height="229"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="COP-zh-7qq"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="mRn-q1-ziZ"/>
+                                    <constraint firstAttribute="height" constant="232" id="tYx-mX-Nqw"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -79,6 +81,7 @@
             <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
             <connections>
                 <outlet property="Descripcionlbl" destination="Voa-j9-lr4" id="lzr-S1-eLA"/>
+                <outlet property="ImageUser" destination="uPS-yN-3gz" id="ULb-hS-cw0"/>
                 <outlet property="Nombrelbl" destination="Pxk-jV-oUV" id="Rgi-On-MgY"/>
                 <outlet property="PrecioUnitariolbl" destination="6MW-rK-aVS" id="hFL-IQ-ckr"/>
                 <outlet property="Stocklbl" destination="oC7-5j-Dts" id="wBG-sh-tTJ"/>

@@ -14,7 +14,7 @@ class ProductoViewModel {
     func Add(producto : Producto) -> Result{
         var result = Result()
         let context = DB.init()
-        let query = "INSERT INTO Producto(Nombre, PrecioUnitario, Stock, IdProveedor, IdDepartamento,Descripcion) VALUES (?,?,?,?,?,?)"
+        let query = "INSERT INTO Producto(Nombre, PrecioUnitario, Stock, IdProveedor, IdDepartamento, Descripcion, Imagen) VALUES (?,?,?,?,?,?,?)"
         var statement : OpaquePointer? = nil
         do{
             if try sqlite3_prepare_v2(context.db, query, -1, &statement, nil) == SQLITE_OK {
@@ -24,6 +24,7 @@ class ProductoViewModel {
                 sqlite3_bind_int(statement, 4, Int32(producto.Proveedor.IdProveedor))
                 sqlite3_bind_int(statement, 5, Int32(producto.Departamento.IdDepartamento))
                 sqlite3_bind_text(statement, 6, (producto.Descripcion as NSString).utf8String, -1, nil)
+                sqlite3_bind_text(statement, 7, (producto.Imagen as NSString).utf8String, -1, nil)
                 
                 if sqlite3_step(statement) == SQLITE_DONE {
                     result.Correct = true
@@ -100,7 +101,7 @@ class ProductoViewModel {
     func GetAll() -> Result{
         var result = Result()
         let context = DB.init()
-        let query = "SELECT IdProducto,Nombre,PrecioUnitario,Stock,IdProveedor,IdDepartamento,Descripcion FROM Producto"
+        let query = "SELECT IdProducto,Nombre,PrecioUnitario,Stock,IdProveedor,IdDepartamento,Descripcion,Imagen FROM Producto"
         var statement : OpaquePointer? = nil
         do{
             if try sqlite3_prepare_v2(context.db, query, -1, &statement, nil) == SQLITE_OK {
@@ -117,6 +118,12 @@ class ProductoViewModel {
                     producto.Departamento = Departamento()
                     producto.Departamento.IdDepartamento = Int(sqlite3_column_int(statement, 5))
                     producto.Descripcion = String(cString: sqlite3_column_text(statement, 6))
+                    
+                    if sqlite3_column_text(statement, 7) != nil {
+                        producto.Imagen = String(cString: sqlite3_column_text(statement, 7))
+                    }else{
+                        producto.Imagen = ""
+                    }
                     
                     result.Objects?.append(producto)
                 }

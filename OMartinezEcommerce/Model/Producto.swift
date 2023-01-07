@@ -15,8 +15,9 @@ struct Producto {
     var Proveedor : Proveedor
     var Departamento : Departamento
     var Descripcion : String
+    var Imagen : String
     
-    init(IdProducto: Int, Nombre: String, PrecioUnitario: Double, Stock: Int, Proveedor: Proveedor, Departamento: Departamento, Descripcion: String) {
+    init(IdProducto: Int, Nombre: String, PrecioUnitario: Double, Stock: Int, Proveedor: Proveedor, Departamento: Departamento, Descripcion: String, Imagen: String) {
         self.IdProducto = IdProducto
         self.Nombre = Nombre
         self.PrecioUnitario = PrecioUnitario
@@ -24,6 +25,7 @@ struct Producto {
         self.Proveedor = Proveedor
         self.Departamento = Departamento
         self.Descripcion = Descripcion
+        self.Imagen = Imagen
     }
     
     init(){
@@ -34,6 +36,7 @@ struct Producto {
         self.Proveedor = OMartinezEcommerce.Proveedor()
         self.Departamento = OMartinezEcommerce.Departamento()
         self.Descripcion = ""
+        self.Imagen = ""
     }
     //var Imagen : VARBINARY
 }

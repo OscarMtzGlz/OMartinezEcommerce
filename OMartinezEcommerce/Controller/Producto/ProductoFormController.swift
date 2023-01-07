@@ -35,10 +35,6 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
         // Do any additional setup after loading the view.
     }
     
-    func convertImageToBase64(img: UIImage) -> String{
-        return img.pngData()?.base64EncodedString() ?? ""
-    }
-    
     func validar(){
         if idProducto == 0{
             ActionBtn.setTitle("Agregar", for: UIControl.State.normal)
@@ -48,6 +44,7 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
             IdProveedorField.text = ""
             IdDepartamentoField.text = ""
             DescripcionField.text = ""
+            imageView.image = UIImage(named: "User")
         }else{
             ActionBtn.setTitle("Modificar", for: UIControl.State.normal)
             let result = productoViewModel.GetById(idProducto: self.idProducto)
@@ -72,8 +69,6 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBAction func imageButton(_ sender: UIButton) {
         self.present(imagePicker, animated: true)
-        let imgString = convertImageToBase64(img: imageView.image!)
-        print("BASE64: \(imgString)")
     }
     @IBAction func ActionButton(_ sender: UIButton) {
         let alertVacio = UIAlertController(title: "Confirmación", message: "Campo vacio", preferredStyle: .alert)
@@ -105,13 +100,24 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
             return
         }
         let descripcion = DescripcionField.text!
+        guard let image = imageView.image else{
+            self.present(alertVacio, animated: false)
+            return
+        }
+        let imageString : String
+        if imageView.restorationIdentifier == "User" {
+            imageString = ""
+        }else{
+            let imageData = image.pngData()! as NSData
+            imageString = imageData.base64EncodedString(options: .lineLength64Characters)
+        }
         
         var proveedor = Proveedor()
         proveedor.IdProveedor = idProveedor
         var departamento = Departamento()
         departamento.IdDepartamento = idDepartamento
         
-        productoModel = Producto(IdProducto: self.idProducto, Nombre: nombre, PrecioUnitario: precioUnitario, Stock: stock, Proveedor: proveedor , Departamento: departamento, Descripcion: descripcion)
+        productoModel = Producto(IdProducto: self.idProducto, Nombre: nombre, PrecioUnitario: precioUnitario, Stock: stock, Proveedor: proveedor , Departamento: departamento, Descripcion: descripcion, Imagen: imageString)
         
         if ActionBtn.currentTitle == "Agregar"{
             
