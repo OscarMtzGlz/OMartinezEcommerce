@@ -303,10 +303,10 @@
             </objects>
             <point key="canvasLocation" x="-2054" y="-618"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Get All Table View Controller-->
         <scene sceneID="bMS-mb-rLd">
             <objects>
-                <tableViewController id="BH9-pE-T0j" sceneMemberID="viewController">
+                <tableViewController id="BH9-pE-T0j" customClass="UGetAllTableViewController" customModule="OMartinezEcommerce" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="qsq-Tn-8Gf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -329,6 +329,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="qum-PU-JwN" kind="show" identifier="Updatesegues" id="zE9-2N-Gem"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEn-Yz-3x2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -371,7 +374,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="280" id="IxB-vj-kH1"/>
                                                                 </constraints>
-                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ApellidoPaterno" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MIo-he-LcV">
@@ -536,7 +539,7 @@
                         <outlet property="ApellidoPaternoField" destination="MIo-he-LcV" id="iDI-SY-6Uc"/>
                         <outlet property="CURPField" destination="dxw-cv-cIN" id="7ML-d2-w0z"/>
                         <outlet property="CelularField" destination="DAj-px-Pbz" id="hDr-T5-gp0"/>
-                        <outlet property="DataPickerField" destination="ZZC-S0-CSY" id="vFz-Wv-BJM"/>
+                        <outlet property="DatePicker" destination="ZZC-S0-CSY" id="vFz-Wv-BJM"/>
                         <outlet property="EmailField" destination="Ux3-aG-WCN" id="jXD-KZ-jqK"/>
                         <outlet property="ImageView" destination="ccB-z6-AOs" id="Z9k-iF-fyU"/>
                         <outlet property="NombreField" destination="h8h-MG-RN7" id="Buh-LG-con"/>
@@ -586,6 +589,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="zE9-2N-Gem"/>
         <segue reference="Ce3-Hw-9L8"/>
         <segue reference="2Os-12-LGy"/>
     </inferredMetricsTieBreakers>

@@ -30,6 +30,7 @@
 		EB9DCCBE295BC2D40016D740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB9DCCBD295BC2D40016D740 /* Assets.xcassets */; };
 		EB9DCCC1295BC2D40016D740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB9DCCBF295BC2D40016D740 /* LaunchScreen.storyboard */; };
 		EB9DCCC9295BC3060016D740 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9DCCC8295BC3060016D740 /* DB.swift */; };
+		EBB115B4296DCF5200918DF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBB115B3296DCF5200918DF7 /* GoogleService-Info.plist */; };
 		EBC0178A2965FDB00097BBF8 /* DepartamentoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC017892965FDB00097BBF8 /* DepartamentoViewModel.swift */; };
 		EBC01794296601C50097BBF8 /* GetAllDepartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC01793296601C50097BBF8 /* GetAllDepartTableViewController.swift */; };
 		EBCA56DE295E694800F901BC /* ProductoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA56DC295E694800F901BC /* ProductoTableViewCell.swift */; };
@@ -67,6 +68,7 @@
 		EB9DCCC0295BC2D40016D740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB9DCCC2295BC2D40016D740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB9DCCC8295BC3060016D740 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		EBB115B3296DCF5200918DF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EBC017892965FDB00097BBF8 /* DepartamentoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartamentoViewModel.swift; sourceTree = "<group>"; };
 		EBC01793296601C50097BBF8 /* GetAllDepartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllDepartTableViewController.swift; sourceTree = "<group>"; };
 		EBCA56DC295E694800F901BC /* ProductoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoTableViewCell.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				EB9DCCB3295BC2D20016D740 /* SceneDelegate.swift */,
 				EB9DCCBD295BC2D40016D740 /* Assets.xcassets */,
 				EB9DCCC2295BC2D40016D740 /* Info.plist */,
+				EBB115B3296DCF5200918DF7 /* GoogleService-Info.plist */,
 				EB9DCCBA295BC2D20016D740 /* OMartinezEcommerce.xcdatamodeld */,
 			);
 			path = OMartinezEcommerce;
@@ -306,6 +309,7 @@
 				EBCA56DF295E694800F901BC /* TableViewCell.xib in Resources */,
 				EB9DCCBE295BC2D40016D740 /* Assets.xcassets in Resources */,
 				EB9DCCB9295BC2D20016D740 /* Main.storyboard in Resources */,
+				EBB115B4296DCF5200918DF7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

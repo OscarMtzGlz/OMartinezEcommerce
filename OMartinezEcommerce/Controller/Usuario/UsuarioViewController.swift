@@ -17,7 +17,7 @@ class UsuarioViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var EmailField: UITextField!
     @IBOutlet weak var PasswordField: UITextField!
     @IBOutlet weak var SexoField: UITextField!
-    @IBOutlet weak var DataPickerField: UIDatePicker!
+    @IBOutlet weak var DatePicker: UIDatePicker!
     @IBOutlet weak var CURPField: UITextField!
     @IBOutlet weak var CelularField: UITextField!
     @IBOutlet weak var TelefonoField: UITextField!
@@ -26,7 +26,7 @@ class UsuarioViewController: UIViewController, UIImagePickerControllerDelegate, 
     let usuarioViewModel = UsuarioViewModel()
     var usuarioModel : UsuarioC? = nil
     let imagePicker = UIImagePickerController()
-    
+    var posicionUsuario : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +35,51 @@ class UsuarioViewController: UIViewController, UIImagePickerControllerDelegate, 
         imagePicker.sourceType = .photoLibrary
         imagePicker.isEditing = false
         
-        ActionBtn.setTitle("Agregar", for: .normal)
+        //ActionBtn.setTitle("Agregar", for: .normal)
         
-        usuarioViewModel.GetAll()
+        validar()
         // Do any additional setup after loading the view.
+    }
+    
+    func validar(){
+        if posicionUsuario == 0{
+            ActionBtn.setTitle("Agregar", for: UIControl.State.normal)
+            NombreField.text = ""
+            ApellidoPaternoField.text = ""
+            ApellidoMaternoField.text = ""
+            UserNameField.text = ""
+            EmailField.text = ""
+            PasswordField.text = ""
+            SexoField.text = ""
+            DatePicker.date
+            CURPField.text = ""
+            TelefonoField.text = ""
+            CelularField.text = ""
+            ImageView.image = UIImage(named: "User")
+        }else{
+            ActionBtn.setTitle("Modificar", for: UIControl.State.normal)
+            let result = usuarioViewModel.GetById(posicionUsuario: (self.posicionUsuario - 1))
+            if result.Correct {
+                var usuario = result.Object! as! UsuarioC
+                NombreField.text = usuario.Nombre
+                ApellidoPaternoField.text = usuario.ApellidoPaterno
+                ApellidoMaternoField.text = usuario.ApellidoMaterno
+                UserNameField.text = usuario.UserName
+                EmailField.text = usuario.Email
+                PasswordField.text = usuario.Password
+                SexoField.text = usuario.Sexo
+                DatePicker.setDate(usuario.FechaNacimiento, animated: false)
+                CURPField.text = usuario.CURP
+                TelefonoField.text = usuario.Telefono
+                CelularField.text = usuario.Celular
+                if usuario.Imagen == nil{
+                    ImageView.image = UIImage(named: "User")
+                }else{
+                    let imageData = Data(base64Encoded: usuario.Imagen, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
+                    ImageView.image = UIImage(data: imageData!)
+                }
+            }
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -84,7 +125,7 @@ class UsuarioViewController: UIViewController, UIImagePickerControllerDelegate, 
             self.present(alertVacio, animated: false)
             return
         }
-        guard let fechaNacimiento = DataPickerField else{
+        guard let fechaNacimiento = DatePicker else{
             self.present(alertVacio, animated: false)
             return
         }
@@ -117,7 +158,7 @@ class UsuarioViewController: UIViewController, UIImagePickerControllerDelegate, 
             imageString = imageData.base64EncodedString(options: .lineLength64Characters)
         }
         
-        usuarioModel = UsuarioC(IdUsuario: 0, UserName: userName, Nombre: nombre, ApellidoPaterno: apellidoPaterno, ApellidoMaterno: apellidoMaterno, Email: email, Password: password, FechaNacimiento: fechaNacimiento.date, Sexo: sexo, Telefono: telefono, Celular: celular, CURP: curp, Imagen: imageString)
+        usuarioModel = UsuarioC(IdUsuario: (posicionUsuario - 1), UserName: userName, Nombre: nombre, ApellidoPaterno: apellidoPaterno, ApellidoMaterno: apellidoMaterno, Email: email, Password: password, FechaNacimiento: fechaNacimiento.date, Sexo: sexo, Telefono: telefono, Celular: celular, CURP: curp, Imagen: imageString)
         
         if ActionBtn.currentTitle == "Agregar" {
             let result = usuarioViewModel.Add(usuario: usuarioModel!)
@@ -125,7 +166,10 @@ class UsuarioViewController: UIViewController, UIImagePickerControllerDelegate, 
                 self.present(alertCorrect, animated: false)
             }
         }else if ActionBtn.currentTitle == "Modificar" {
-            
+            let result = usuarioViewModel.Update(usuario: usuarioModel!)
+            if result.Correct {
+                self.present(alertCorrect, animated: false)
+            }
         }else{
             self.present(alertIncorrect, animated: false)
         }

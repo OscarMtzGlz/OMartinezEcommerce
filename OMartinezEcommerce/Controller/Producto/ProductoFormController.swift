@@ -57,6 +57,12 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
                 IdProveedorField.text = String(producto.Proveedor.IdProveedor)
                 IdDepartamentoField.text = String(producto.Departamento.IdDepartamento)
                 DescripcionField.text = producto.Descripcion
+                if producto.Imagen == nil{
+                    imageView.image = UIImage(named: "User")
+                }else{
+                    let imageData = Data(base64Encoded: producto.Imagen, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
+                    imageView.image = UIImage(data: imageData!)
+                }
             }
         }
         
