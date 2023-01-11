@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import iOSDropDown
+
 
 class ProductoFormController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -15,14 +17,16 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var NombreField: UITextField!
     @IBOutlet weak var PrecioUnitarioField: UITextField!
     @IBOutlet weak var StockField: UITextField!
-    @IBOutlet weak var IdProveedorField: UITextField!
     @IBOutlet weak var IdDepartamentoField: UITextField!
     @IBOutlet weak var DescripcionField: UITextField!
+    @IBOutlet weak var ProveedorDropDown: DropDown!
     
     let productoViewModel = ProductoViewModel()
     var productoModel : Producto? = nil
     var idProducto : Int = 0
     let imagePicker = UIImagePickerController()
+    var IdProveedor : Int = 0
+    var proveedorViewModel = ProveedorViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +36,24 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
         imagePicker.isEditing = false
         //let result = productoViewModel.GetAll()
         validar()
+        
+        ProveedorDropDown.optionArray = [String]()
+        ProveedorDropDown.optionIds = [Int]()
+        loadData()
         // Do any additional setup after loading the view.
+        ProveedorDropDown.didSelect{ selectedText, index, id in
+            self.IdProveedor = id
+        }
+    }
+    
+    func loadData(){
+        let result = proveedorViewModel.GetAll()
+        if result.Correct {
+            for proveedor in result.Objects as! [Proveedor]{
+                ProveedorDropDown.optionArray.append(proveedor.Nombre)
+                ProveedorDropDown.optionIds?.append(proveedor.IdProveedor)
+            }
+        }
     }
     
     func validar(){
@@ -41,7 +62,7 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
             NombreField.text = ""
             PrecioUnitarioField.text = ""
             StockField.text = ""
-            IdProveedorField.text = ""
+            ProveedorDropDown.text = ""
             IdDepartamentoField.text = ""
             DescripcionField.text = ""
             imageView.image = UIImage(named: "User")
@@ -54,7 +75,7 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
                 NombreField.text = producto.Nombre
                 PrecioUnitarioField.text = String(producto.PrecioUnitario)
                 StockField.text = String(producto.Stock)
-                IdProveedorField.text = String(producto.Proveedor.IdProveedor)
+                ProveedorDropDown.text = String(producto.Proveedor.IdProveedor)
                 IdDepartamentoField.text = String(producto.Departamento.IdDepartamento)
                 DescripcionField.text = producto.Descripcion
                 if producto.Imagen == nil{
@@ -97,7 +118,7 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
             self.present(alertVacio, animated: false)
             return
         }
-        guard let idProveedor = Int(IdProveedorField.text!) else{
+        guard let idProveedor = Int(ProveedorDropDown.text!) else{
             self.present(alertVacio, animated: false)
             return
         }
