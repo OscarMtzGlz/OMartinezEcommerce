@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C6p-aB-0B7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vbd-8o-9db">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -166,23 +166,20 @@
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="kvP-v8-dXG" kind="relationship" relationship="rootViewController" id="Fe6-AX-PyS"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nmh-gu-m7z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2634" y="1702"/>
         </scene>
         <!--Ventas Collection View Controller-->
-        <scene sceneID="Kyr-vA-Cmk">
+        <scene sceneID="Iku-Xb-hU3">
             <objects>
-                <collectionViewController id="kvP-v8-dXG" customClass="VentasCollectionViewController" customModule="OMartinezEcommerce" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Vmz-nv-v3P">
+                <collectionViewController id="vbd-8o-9db" customClass="VentasCollectionViewController" customModule="OMartinezEcommerce" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="32s-em-zZJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PF1-P8-fjO">
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Haq-Pk-C75">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -190,16 +187,14 @@
                         </collectionViewFlowLayout>
                         <cells/>
                         <connections>
-                            <outlet property="dataSource" destination="kvP-v8-dXG" id="jvE-Vn-QOg"/>
-                            <outlet property="delegate" destination="kvP-v8-dXG" id="giP-GH-Hhk"/>
+                            <outlet property="dataSource" destination="vbd-8o-9db" id="IPY-hC-XP3"/>
+                            <outlet property="delegate" destination="vbd-8o-9db" id="Gf0-b9-bNG"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="iHr-AS-txS"/>
-                    <size key="freeformSize" width="393" height="852"/>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lw4-Gh-Uax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQQ-Ix-wdo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1805" y="1701"/>
+            <point key="canvasLocation" x="-1804" y="1702"/>
         </scene>
         <!--Get All Depart Table View Controller-->
         <scene sceneID="DUG-nV-j9L">

@@ -7,10 +7,11 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class VentasCollectionViewController: UICollectionViewController {
 
+    let productoViewModel = ProductoViewModel()
+    var productos = [Producto]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,9 +19,24 @@ class VentasCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(UINib(nibName:"VentasCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "ProductoCard")
+        //collectionView.register(UINib(nibName: "VentasCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductoCard")
+        loadData()
 
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+    }
+    
+    func loadData(){
+        let result = productoViewModel.GetAll()
+        if result.Correct {
+            productos = result.Objects! as! [Producto]
+            self.collectionView.reloadData()
+        }else{
+            //alert
+        }
     }
 
     /*
@@ -37,20 +53,30 @@ class VentasCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return productos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductoCard", for: indexPath) as! VentasCollectionViewCell
     
         // Configure the cell
-    
+        
+        cell.NombreView.text = productos[indexPath.row].Nombre
+        cell.CampoView.text = String(productos[indexPath.row].PrecioUnitario)
+        
+        if productos[indexPath.row].Imagen == "" {
+            cell.ImageView.image = UIImage(named: "User")
+        }else{
+            let imageData = Data(base64Encoded: productos[indexPath.row].Imagen, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
+            cell.ImageView.image = UIImage(data: imageData!)
+        }
+        
         return cell
     }
 
