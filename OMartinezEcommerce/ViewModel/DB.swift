@@ -9,7 +9,7 @@ import Foundation
 import SQLite3
 
 class DB{
-    let path : String = "OMartinezEcommerce.sql"
+    let path : String = "OMartinezEcommerce2.sql"
     var db : OpaquePointer? = nil
     init(){
         db = OpenConexion()

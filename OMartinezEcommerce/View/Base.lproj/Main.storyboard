@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wpl-d9-V9c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C6p-aB-0B7">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -143,6 +143,7 @@
             <objects>
                 <navigationController id="tNS-Us-a2I" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Departamento" image="house.lodge.fill" catalog="system" selectedImage="house.lodge.fill" id="OFV-C2-eGM"/>
+                    <size key="freeformSize" width="393" height="852"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JnV-yK-zt4">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -154,6 +155,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKn-t0-eAK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2118" y="932"/>
+        </scene>
+        <!--Ventas-->
+        <scene sceneID="SBo-oU-ksL">
+            <objects>
+                <navigationController id="vCk-Kc-aQg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Ventas" image="cart.fill" catalog="system" selectedImage="cart.fill" id="98X-Ap-4LL"/>
+                    <size key="freeformSize" width="393" height="852"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="woE-6S-aol">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kvP-v8-dXG" kind="relationship" relationship="rootViewController" id="Fe6-AX-PyS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nmh-gu-m7z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2634" y="1702"/>
+        </scene>
+        <!--Ventas Collection View Controller-->
+        <scene sceneID="Kyr-vA-Cmk">
+            <objects>
+                <collectionViewController id="kvP-v8-dXG" customClass="VentasCollectionViewController" customModule="OMartinezEcommerce" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Vmz-nv-v3P">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PF1-P8-fjO">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="kvP-v8-dXG" id="jvE-Vn-QOg"/>
+                            <outlet property="delegate" destination="kvP-v8-dXG" id="giP-GH-Hhk"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="iHr-AS-txS"/>
+                    <size key="freeformSize" width="393" height="852"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lw4-Gh-Uax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1805" y="1701"/>
         </scene>
         <!--Get All Depart Table View Controller-->
         <scene sceneID="DUG-nV-j9L">
@@ -454,6 +500,7 @@
         <scene sceneID="t8k-aM-6bK">
             <objects>
                 <navigationController id="wpl-d9-V9c" sceneMemberID="viewController">
+                    <size key="freeformSize" width="393" height="852"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QoZ-ch-yda">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -471,6 +518,7 @@
             <objects>
                 <tabBarController title="TabController" id="C6p-aB-0B7" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="9Js-sE-Qx4"/>
+                    <size key="freeformSize" width="393" height="852"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AZY-KD-GKI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -481,6 +529,7 @@
                         <segue destination="tNS-Us-a2I" kind="relationship" relationship="viewControllers" id="qza-MW-Eal"/>
                         <segue destination="XJK-ae-eMr" kind="relationship" relationship="viewControllers" id="VWf-o0-iyf"/>
                         <segue destination="9P4-qt-O9a" kind="relationship" relationship="viewControllers" id="1y6-k9-pdM"/>
+                        <segue destination="vCk-Kc-aQg" kind="relationship" relationship="viewControllers" id="7LA-yv-Rwa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8r-Ft-mCm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -492,6 +541,7 @@
             <objects>
                 <navigationController id="UIs-4L-te8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Producto" image="basket" catalog="system" selectedImage="basket" id="q4m-Pg-ROa"/>
+                    <size key="freeformSize" width="393" height="852"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w74-kQ-DhG">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -509,6 +559,7 @@
             <objects>
                 <navigationController id="XJK-ae-eMr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Usuarios" image="person.circle.fill" catalog="system" selectedImage="person.circle.fill" id="7di-cQ-HIT"/>
+                    <size key="freeformSize" width="393" height="852"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wJ6-94-HwP">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -559,7 +610,8 @@
         <scene sceneID="BU7-qg-saJ">
             <objects>
                 <navigationController id="9P4-qt-O9a" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Proveedor" image="cube.box.fill" catalog="system" selectedImage="cube.box.fill" id="VKN-mx-jx8"/>
+                    <tabBarItem key="tabBarItem" title="Proveedor" image="rectangle.stack.person.crop" selectedImage="rectangle.stack.person.crop" catalog="system" id="VKN-mx-jx8"/>
+                    <size key="freeformSize" width="393" height="852"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XG5-N7-r8J">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -879,11 +931,13 @@
         <image name="basket" catalog="system" width="128" height="108"/>
         <image name="camera" catalog="system" width="128" height="93"/>
         <image name="camera.fill" catalog="system" width="128" height="93"/>
-        <image name="cube.box.fill" catalog="system" width="128" height="123"/>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="house.lodge.fill" catalog="system" width="128" height="55"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <image name="rectangle.stack.person.crop" catalog="system" width="128" height="122"/>
+        <image name="rectangle.stack.person.crop" width="128" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

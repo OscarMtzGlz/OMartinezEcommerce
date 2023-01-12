@@ -23,6 +23,9 @@
 		EB58551F296DF6B40014B131 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = EB58551E296DF6B40014B131 /* FirebaseDatabase */; };
 		EB585521296DF6B40014B131 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EB585520296DF6B40014B131 /* FirebaseFirestore */; };
 		EB585523296DF6B40014B131 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EB585522296DF6B40014B131 /* FirebaseFirestoreSwift */; };
+		EB9AC2CC2970904300B5401E /* VentasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9AC2CA2970904300B5401E /* VentasCollectionViewCell.swift */; };
+		EB9AC2CD2970904300B5401E /* VentasCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB9AC2CB2970904300B5401E /* VentasCollectionViewCell.xib */; };
+		EB9AC2CF2970913100B5401E /* VentasCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9AC2CE2970913100B5401E /* VentasCollectionViewController.swift */; };
 		EB9D81B829687A0D00915489 /* UsuaioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D81B729687A0D00915489 /* UsuaioViewModel.swift */; };
 		EB9D81BB29687EEF00915489 /* UsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D81BA29687EEF00915489 /* UsuarioViewController.swift */; };
 		EB9D9CD12968F0430023ABA1 /* UGetAllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D9CD02968F0430023ABA1 /* UGetAllTableViewController.swift */; };
@@ -64,6 +67,9 @@
 		EB49B1CF295CF21700D7BF5E /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		EB49B1D1295CF26B00D7BF5E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		EB585505296DE8310014B131 /* SingupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingupViewController.swift; sourceTree = "<group>"; };
+		EB9AC2CA2970904300B5401E /* VentasCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentasCollectionViewCell.swift; sourceTree = "<group>"; };
+		EB9AC2CB2970904300B5401E /* VentasCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VentasCollectionViewCell.xib; sourceTree = "<group>"; };
+		EB9AC2CE2970913100B5401E /* VentasCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentasCollectionViewController.swift; sourceTree = "<group>"; };
 		EB9D81B729687A0D00915489 /* UsuaioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuaioViewModel.swift; sourceTree = "<group>"; };
 		EB9D81BA29687EEF00915489 /* UsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioViewController.swift; sourceTree = "<group>"; };
 		EB9D9CD02968F0430023ABA1 /* UGetAllTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UGetAllTableViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +249,9 @@
 				EB9D81B929687EA300915489 /* Usuario */,
 				EBC017882965FD840097BBF8 /* Departamento */,
 				EBC017872965FD6C0097BBF8 /* Producto */,
+				EB9AC2CA2970904300B5401E /* VentasCollectionViewCell.swift */,
+				EB9AC2CB2970904300B5401E /* VentasCollectionViewCell.xib */,
+				EB9AC2CE2970913100B5401E /* VentasCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -375,6 +384,7 @@
 				EB9DCCC1295BC2D40016D740 /* LaunchScreen.storyboard in Resources */,
 				EBCA56DF295E694800F901BC /* TableViewCell.xib in Resources */,
 				EB9DCCBE295BC2D40016D740 /* Assets.xcassets in Resources */,
+				EB9AC2CD2970904300B5401E /* VentasCollectionViewCell.xib in Resources */,
 				EB9DCCB9295BC2D20016D740 /* Main.storyboard in Resources */,
 				EBB115B4296DCF5200918DF7 /* GoogleService-Info.plist in Resources */,
 			);
@@ -442,6 +452,7 @@
 				EBBF4102296E358C009B319F /* ProveedorViewModel.swift in Sources */,
 				EBCA56E1295E6A5D00F901BC /* GetAllTableViewController.swift in Sources */,
 				EB49B1CE295CF1D600D7BF5E /* Departamento.swift in Sources */,
+				EB9AC2CF2970913100B5401E /* VentasCollectionViewController.swift in Sources */,
 				EB339DF72966030800E01D2B /* DepartamentViewController.swift in Sources */,
 				EB49B1CA295CF0DF00D7BF5E /* Producto.swift in Sources */,
 				EB9DCCB2295BC2D20016D740 /* AppDelegate.swift in Sources */,
@@ -450,6 +461,7 @@
 				EB9D81BB29687EEF00915489 /* UsuarioViewController.swift in Sources */,
 				EBBF4105296E35B7009B319F /* ProveedorViewController.swift in Sources */,
 				EB9DCCC9295BC3060016D740 /* DB.swift in Sources */,
+				EB9AC2CC2970904300B5401E /* VentasCollectionViewCell.swift in Sources */,
 				EBDB27E329679B2200DA15F5 /* Usuario.swift in Sources */,
 				EB49B1C8295CE91900D7BF5E /* ProductoViewModel.swift in Sources */,
 				EB9DCCB4295BC2D20016D740 /* SceneDelegate.swift in Sources */,
