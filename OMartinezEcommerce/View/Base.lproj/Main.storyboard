@@ -251,10 +251,10 @@
             </objects>
             <point key="canvasLocation" x="-558" y="932"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Login Form View Controller-->
         <scene sceneID="9LE-ef-6My">
             <objects>
-                <viewController id="Q6Z-eh-KNI" customClass="LoginViewController" customModule="OMartinezEcommerce" sceneMemberID="viewController">
+                <viewController id="Q6Z-eh-KNI" customClass="LoginFormViewController" customModule="OMartinezEcommerce" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Fe-0d-yDW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -298,7 +298,7 @@
                                             <color key="baseBackgroundColor" name="titles"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="LoginAction:" destination="Q6Z-eh-KNI" eventType="touchUpInside" id="tda-2n-gTs"/>
+                                            <action selector="LoginAction:" destination="Q6Z-eh-KNI" eventType="touchUpInside" id="9s1-J9-eej"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivl-SL-hDJ">
@@ -348,11 +348,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Szn-HI-Khx"/>
                     <connections>
-                        <outlet property="BtnLogin" destination="3tZ-Xz-9Y3" id="2S3-Q3-Fd6"/>
-                        <outlet property="BtnSingup" destination="Ivl-SL-hDJ" id="gXZ-sS-Ubv"/>
-                        <outlet property="EmailField" destination="gL5-ib-gxL" id="zwG-Tu-66l"/>
-                        <outlet property="PasswordField" destination="FtF-lP-fAD" id="loD-dJ-iVh"/>
-                        <outlet property="ViewContainer" destination="Nop-a4-E21" id="ysM-Ww-EsI"/>
+                        <outlet property="EmailField" destination="gL5-ib-gxL" id="1VC-r7-KYF"/>
+                        <outlet property="LoginButton" destination="3tZ-Xz-9Y3" id="brh-zc-Oo1"/>
+                        <outlet property="PasswordField" destination="FtF-lP-fAD" id="Ue5-xb-4tS"/>
+                        <outlet property="ViewContainer" destination="Nop-a4-E21" id="ocM-Vo-5kS"/>
                         <segue destination="C6p-aB-0B7" kind="show" identifier="loginSegue" id="8XF-lQ-vL7"/>
                     </connections>
                 </viewController>

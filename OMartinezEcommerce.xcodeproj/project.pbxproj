@@ -17,7 +17,6 @@
 		EB49B1CE295CF1D600D7BF5E /* Departamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB49B1CD295CF1D600D7BF5E /* Departamento.swift */; };
 		EB49B1D0295CF21700D7BF5E /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB49B1CF295CF21700D7BF5E /* Area.swift */; };
 		EB49B1D2295CF26B00D7BF5E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB49B1D1295CF26B00D7BF5E /* Result.swift */; };
-		EB585504296DE4A70014B131 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB585503296DE4A70014B131 /* LoginViewController.swift */; };
 		EB585506296DE8310014B131 /* SingupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB585505296DE8310014B131 /* SingupViewController.swift */; };
 		EB58551B296DF6B40014B131 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EB58551A296DF6B40014B131 /* FirebaseAnalytics */; };
 		EB58551D296DF6B40014B131 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EB58551C296DF6B40014B131 /* FirebaseAuth */; };
@@ -39,6 +38,7 @@
 		EB9DCCC9295BC3060016D740 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9DCCC8295BC3060016D740 /* DB.swift */; };
 		EBAEB899296F198E0020263F /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBAEB898296F198E0020263F /* iOSDropDown.framework */; };
 		EBB115B4296DCF5200918DF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBB115B3296DCF5200918DF7 /* GoogleService-Info.plist */; };
+		EBBDEA13296F814E0042DF35 /* LoginFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBDEA12296F814E0042DF35 /* LoginFormViewController.swift */; };
 		EBBF4102296E358C009B319F /* ProveedorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBF4101296E358C009B319F /* ProveedorViewModel.swift */; };
 		EBBF4105296E35B7009B319F /* ProveedorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBF4104296E35B7009B319F /* ProveedorViewController.swift */; };
 		EBC0178A2965FDB00097BBF8 /* DepartamentoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC017892965FDB00097BBF8 /* DepartamentoViewModel.swift */; };
@@ -63,7 +63,6 @@
 		EB49B1CD295CF1D600D7BF5E /* Departamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departamento.swift; sourceTree = "<group>"; };
 		EB49B1CF295CF21700D7BF5E /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		EB49B1D1295CF26B00D7BF5E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		EB585503296DE4A70014B131 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EB585505296DE8310014B131 /* SingupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingupViewController.swift; sourceTree = "<group>"; };
 		EB9D81B729687A0D00915489 /* UsuaioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuaioViewModel.swift; sourceTree = "<group>"; };
 		EB9D81BA29687EEF00915489 /* UsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		EB9DCCC8295BC3060016D740 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 		EBAEB898296F198E0020263F /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB115B3296DCF5200918DF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EBBDEA12296F814E0042DF35 /* LoginFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormViewController.swift; sourceTree = "<group>"; };
 		EBBF40FC296E3503009B319F /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBF4101296E358C009B319F /* ProveedorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProveedorViewModel.swift; sourceTree = "<group>"; };
 		EBBF4104296E35B7009B319F /* ProveedorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProveedorViewController.swift; sourceTree = "<group>"; };
@@ -138,8 +138,8 @@
 		EB585502296DE4770014B131 /* LoginSingup */ = {
 			isa = PBXGroup;
 			children = (
-				EB585503296DE4A70014B131 /* LoginViewController.swift */,
 				EB585505296DE8310014B131 /* SingupViewController.swift */,
+				EBBDEA12296F814E0042DF35 /* LoginFormViewController.swift */,
 			);
 			path = LoginSingup;
 			sourceTree = "<group>";
@@ -432,6 +432,7 @@
 				EB585506296DE8310014B131 /* SingupViewController.swift in Sources */,
 				EBC01794296601C50097BBF8 /* GetAllDepartTableViewController.swift in Sources */,
 				EBCA56DE295E694800F901BC /* ProductoTableViewCell.swift in Sources */,
+				EBBDEA13296F814E0042DF35 /* LoginFormViewController.swift in Sources */,
 				EB49B1D0295CF21700D7BF5E /* Area.swift in Sources */,
 				EB49B1CC295CF19600D7BF5E /* Proveedor.swift in Sources */,
 				EB9DCCBC295BC2D20016D740 /* OMartinezEcommerce.xcdatamodeld in Sources */,
@@ -443,7 +444,6 @@
 				EB49B1CE295CF1D600D7BF5E /* Departamento.swift in Sources */,
 				EB339DF72966030800E01D2B /* DepartamentViewController.swift in Sources */,
 				EB49B1CA295CF0DF00D7BF5E /* Producto.swift in Sources */,
-				EB585504296DE4A70014B131 /* LoginViewController.swift in Sources */,
 				EB9DCCB2295BC2D20016D740 /* AppDelegate.swift in Sources */,
 				EB339DF42966025300E01D2B /* DepartTableViewCell.swift in Sources */,
 				EB9D9CD12968F0430023ABA1 /* UGetAllTableViewController.swift in Sources */,
