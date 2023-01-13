@@ -12,6 +12,7 @@ class VentasCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var NombreView: UILabel!
     @IBOutlet weak var CampoView: UILabel!
+    @IBOutlet weak var container: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

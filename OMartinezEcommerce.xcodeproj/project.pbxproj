@@ -41,6 +41,7 @@
 		EB9DCCBE295BC2D40016D740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB9DCCBD295BC2D40016D740 /* Assets.xcassets */; };
 		EB9DCCC1295BC2D40016D740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB9DCCBF295BC2D40016D740 /* LaunchScreen.storyboard */; };
 		EB9DCCC9295BC3060016D740 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9DCCC8295BC3060016D740 /* DB.swift */; };
+		EBACF3F92971DDD200AB97EE /* DepartamentoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACF3F82971DDD200AB97EE /* DepartamentoCollectionViewController.swift */; };
 		EBAEB899296F198E0020263F /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBAEB898296F198E0020263F /* iOSDropDown.framework */; };
 		EBB115B4296DCF5200918DF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBB115B3296DCF5200918DF7 /* GoogleService-Info.plist */; };
 		EBBDEA13296F814E0042DF35 /* LoginFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBDEA12296F814E0042DF35 /* LoginFormViewController.swift */; };
@@ -89,6 +90,7 @@
 		EB9DCCC0295BC2D40016D740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB9DCCC2295BC2D40016D740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB9DCCC8295BC3060016D740 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		EBACF3F82971DDD200AB97EE /* DepartamentoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartamentoCollectionViewController.swift; sourceTree = "<group>"; };
 		EBAEB898296F198E0020263F /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB115B3296DCF5200918DF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EBBDEA12296F814E0042DF35 /* LoginFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				EB339DF22966025300E01D2B /* DepartTableViewCell.swift */,
 				EBC01793296601C50097BBF8 /* GetAllDepartTableViewController.swift */,
 				EB339DF62966030800E01D2B /* DepartamentViewController.swift */,
+				EBACF3F82971DDD200AB97EE /* DepartamentoCollectionViewController.swift */,
 			);
 			path = Departamento;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				EB339DF42966025300E01D2B /* DepartTableViewCell.swift in Sources */,
 				EB9AC2D52970D5EC00B5401E /* AreaViewModel.swift in Sources */,
 				EB9D9CD12968F0430023ABA1 /* UGetAllTableViewController.swift in Sources */,
+				EBACF3F92971DDD200AB97EE /* DepartamentoCollectionViewController.swift in Sources */,
 				EB9D81BB29687EEF00915489 /* UsuarioViewController.swift in Sources */,
 				EBBF4105296E35B7009B319F /* ProveedorViewController.swift in Sources */,
 				EB9DCCC9295BC3060016D740 /* DB.swift in Sources */,

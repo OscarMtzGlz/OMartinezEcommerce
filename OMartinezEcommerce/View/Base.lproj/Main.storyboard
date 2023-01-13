@@ -226,7 +226,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="6x5-Yn-ACH"/>
                     <connections>
-                        <segue destination="hLn-C2-bw5" kind="show" id="5bn-tT-Jdf"/>
+                        <outlet property="collectionView" destination="Iuf-dt-heC" id="Mik-nC-i1E"/>
+                        <outlet property="searchBtn" destination="W6h-2w-Mky" id="DTE-Rr-lbC"/>
+                        <outlet property="searchField" destination="6SM-HM-M6t" id="Dly-cv-3fy"/>
+                        <segue destination="hLn-C2-bw5" kind="show" identifier="DepartamentoSegues" id="5bn-tT-Jdf"/>
                         <segue destination="vbd-8o-9db" kind="show" id="Krx-8P-fAO"/>
                     </connections>
                 </viewController>
@@ -234,10 +237,10 @@
             </objects>
             <point key="canvasLocation" x="-1828.2442748091603" y="1701.4084507042255"/>
         </scene>
-        <!--View Controller-->
+        <!--Departamento Collection View Controller-->
         <scene sceneID="67i-g3-hpd">
             <objects>
-                <viewController id="hLn-C2-bw5" sceneMemberID="viewController">
+                <viewController id="hLn-C2-bw5" customClass="DepartamentoCollectionViewController" customModule="OMartinezEcommerce" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oXb-Ny-s6g">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -688,7 +691,7 @@
         <scene sceneID="BU7-qg-saJ">
             <objects>
                 <navigationController id="9P4-qt-O9a" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Proveedor" image="rectangle.stack.person.crop" selectedImage="rectangle.stack.person.crop" catalog="system" id="VKN-mx-jx8"/>
+                    <tabBarItem key="tabBarItem" title="Proveedor" image="rectangle.stack.person.crop" catalog="system" selectedImage="rectangle.stack.person.crop" id="VKN-mx-jx8"/>
                     <size key="freeformSize" width="393" height="852"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XG5-N7-r8J">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -1017,7 +1020,6 @@
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="rectangle.stack.person.crop" catalog="system" width="128" height="122"/>
-        <image name="rectangle.stack.person.crop" width="128" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
