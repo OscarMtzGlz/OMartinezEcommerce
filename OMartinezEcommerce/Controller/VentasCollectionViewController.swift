@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VentasCollectionViewController: UICollectionViewController {
+class VentasCollectionViewController: UICollectionViewController{
 
     let productoViewModel = ProductoViewModel()
     var productos = [Producto]()
@@ -22,6 +22,7 @@ class VentasCollectionViewController: UICollectionViewController {
         collectionView.register(UINib(nibName:"VentasCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "ProductoCard")
         //collectionView.register(UINib(nibName: "VentasCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductoCard")
         loadData()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -66,7 +67,6 @@ class VentasCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductoCard", for: indexPath) as! VentasCollectionViewCell
     
         // Configure the cell
-        
         cell.NombreView.text = productos[indexPath.row].Nombre
         cell.CampoView.text = String(productos[indexPath.row].PrecioUnitario)
         

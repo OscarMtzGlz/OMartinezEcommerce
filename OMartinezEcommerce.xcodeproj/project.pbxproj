@@ -26,6 +26,8 @@
 		EB9AC2CC2970904300B5401E /* VentasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9AC2CA2970904300B5401E /* VentasCollectionViewCell.swift */; };
 		EB9AC2CD2970904300B5401E /* VentasCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB9AC2CB2970904300B5401E /* VentasCollectionViewCell.xib */; };
 		EB9AC2CF2970913100B5401E /* VentasCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9AC2CE2970913100B5401E /* VentasCollectionViewController.swift */; };
+		EB9AC2D22970D51200B5401E /* AreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9AC2D12970D51200B5401E /* AreaViewController.swift */; };
+		EB9AC2D52970D5EC00B5401E /* AreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9AC2D42970D5EC00B5401E /* AreaViewModel.swift */; };
 		EB9D81B829687A0D00915489 /* UsuaioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D81B729687A0D00915489 /* UsuaioViewModel.swift */; };
 		EB9D81BB29687EEF00915489 /* UsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D81BA29687EEF00915489 /* UsuarioViewController.swift */; };
 		EB9D9CD12968F0430023ABA1 /* UGetAllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D9CD02968F0430023ABA1 /* UGetAllTableViewController.swift */; };
@@ -70,6 +72,8 @@
 		EB9AC2CA2970904300B5401E /* VentasCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentasCollectionViewCell.swift; sourceTree = "<group>"; };
 		EB9AC2CB2970904300B5401E /* VentasCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VentasCollectionViewCell.xib; sourceTree = "<group>"; };
 		EB9AC2CE2970913100B5401E /* VentasCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VentasCollectionViewController.swift; sourceTree = "<group>"; };
+		EB9AC2D12970D51200B5401E /* AreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaViewController.swift; sourceTree = "<group>"; };
+		EB9AC2D42970D5EC00B5401E /* AreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaViewModel.swift; sourceTree = "<group>"; };
 		EB9D81B729687A0D00915489 /* UsuaioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuaioViewModel.swift; sourceTree = "<group>"; };
 		EB9D81BA29687EEF00915489 /* UsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioViewController.swift; sourceTree = "<group>"; };
 		EB9D9CD02968F0430023ABA1 /* UGetAllTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UGetAllTableViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +154,22 @@
 			path = LoginSingup;
 			sourceTree = "<group>";
 		};
+		EB9AC2D02970D4EA00B5401E /* Area */ = {
+			isa = PBXGroup;
+			children = (
+				EB9AC2D12970D51200B5401E /* AreaViewController.swift */,
+			);
+			path = Area;
+			sourceTree = "<group>";
+		};
+		EB9AC2D32970D5D400B5401E /* Area */ = {
+			isa = PBXGroup;
+			children = (
+				EB9AC2D42970D5EC00B5401E /* AreaViewModel.swift */,
+			);
+			path = Area;
+			sourceTree = "<group>";
+		};
 		EB9D81B6296879F100915489 /* Usuario */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +240,7 @@
 		EB9DCCCB295BC31E0016D740 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				EB9AC2D32970D5D400B5401E /* Area */,
 				EBBF4100296E356F009B319F /* Proveedor */,
 				EB9D81B6296879F100915489 /* Usuario */,
 				EBC017862965FD520097BBF8 /* Departamento */,
@@ -244,6 +265,7 @@
 		EB9DCCCD295BC3380016D740 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EB9AC2D02970D4EA00B5401E /* Area */,
 				EBBF4103296E359D009B319F /* Proveedor */,
 				EB585502296DE4770014B131 /* LoginSingup */,
 				EB9D81B929687EA300915489 /* Usuario */,
@@ -457,6 +479,7 @@
 				EB49B1CA295CF0DF00D7BF5E /* Producto.swift in Sources */,
 				EB9DCCB2295BC2D20016D740 /* AppDelegate.swift in Sources */,
 				EB339DF42966025300E01D2B /* DepartTableViewCell.swift in Sources */,
+				EB9AC2D52970D5EC00B5401E /* AreaViewModel.swift in Sources */,
 				EB9D9CD12968F0430023ABA1 /* UGetAllTableViewController.swift in Sources */,
 				EB9D81BB29687EEF00915489 /* UsuarioViewController.swift in Sources */,
 				EBBF4105296E35B7009B319F /* ProveedorViewController.swift in Sources */,
@@ -464,6 +487,7 @@
 				EB9AC2CC2970904300B5401E /* VentasCollectionViewCell.swift in Sources */,
 				EBDB27E329679B2200DA15F5 /* Usuario.swift in Sources */,
 				EB49B1C8295CE91900D7BF5E /* ProductoViewModel.swift in Sources */,
+				EB9AC2D22970D51200B5401E /* AreaViewController.swift in Sources */,
 				EB9DCCB4295BC2D20016D740 /* SceneDelegate.swift in Sources */,
 				EBDB27E729679EA500DA15F5 /* Rol.swift in Sources */,
 				EB49B1D2295CF26B00D7BF5E /* Result.swift in Sources */,
