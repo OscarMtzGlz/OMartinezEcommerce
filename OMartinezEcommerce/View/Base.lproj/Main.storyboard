@@ -178,7 +178,7 @@
         <scene sceneID="UoL-rb-hXD">
             <objects>
                 <viewController id="Z49-IK-yWF" customClass="AreaViewController" customModule="OMartinezEcommerce" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GUC-t5-aAg" customClass="VentasCollectionViewCell" customModule="OMartinezEcommerce">
+                    <view key="view" contentMode="scaleToFill" id="GUC-t5-aAg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -192,19 +192,20 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="magnifyingglass" catalog="system"/>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Iuf-dt-heC">
+                            <collectionView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Iuf-dt-heC">
                                 <rect key="frame" x="16" y="175" width="361" height="662"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ev7-ZH-jfK">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ev7-ZH-jfK">
+                                    <size key="itemSize" width="0.0" height="0.0"/>
+                                    <size key="estimatedItemSize" width="175" height="185"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                                 <connections>
-                                    <outlet property="dataSource" destination="GUC-t5-aAg" id="Qfs-Cc-2tE"/>
-                                    <outlet property="delegate" destination="GUC-t5-aAg" id="cTf-fe-mR0"/>
+                                    <outlet property="dataSource" destination="Z49-IK-yWF" id="Mzj-Tc-Tjv"/>
+                                    <outlet property="delegate" destination="Z49-IK-yWF" id="2zx-0o-7m0"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -229,8 +230,8 @@
                         <outlet property="collectionView" destination="Iuf-dt-heC" id="Mik-nC-i1E"/>
                         <outlet property="searchBtn" destination="W6h-2w-Mky" id="DTE-Rr-lbC"/>
                         <outlet property="searchField" destination="6SM-HM-M6t" id="Dly-cv-3fy"/>
-                        <segue destination="hLn-C2-bw5" kind="show" identifier="DepartamentoSegues" id="5bn-tT-Jdf"/>
                         <segue destination="vbd-8o-9db" kind="show" id="Krx-8P-fAO"/>
+                        <segue destination="DrK-Yi-uN9" kind="show" identifier="DepartamentoSegues" id="x6u-yK-SaX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nv4-rN-yL3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -238,23 +239,30 @@
             <point key="canvasLocation" x="-1828.2442748091603" y="1701.4084507042255"/>
         </scene>
         <!--Departamento Collection View Controller-->
-        <scene sceneID="67i-g3-hpd">
+        <scene sceneID="eED-yc-iS3">
             <objects>
-                <viewController id="hLn-C2-bw5" customClass="DepartamentoCollectionViewController" customModule="OMartinezEcommerce" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oXb-Ny-s6g">
+                <collectionViewController id="DrK-Yi-uN9" customClass="DepartamentoCollectionViewController" customModule="OMartinezEcommerce" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rnF-xO-3zW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="8Qc-JS-q2B"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="B4e-rn-bRC"/>
-                    <connections>
-                        <segue destination="vbd-8o-9db" kind="show" id="qxM-p9-spv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qyk-ah-EzV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fzO-op-U8G">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="DrK-Yi-uN9" id="7aZ-xs-tny"/>
+                            <outlet property="delegate" destination="DrK-Yi-uN9" id="C4o-Xj-oYx"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="t9d-PI-OoP"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bVp-cc-8IN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1077" y="2218"/>
+            <point key="canvasLocation" x="-1050" y="2225"/>
         </scene>
         <!--Ventas Collection View Controller-->
         <scene sceneID="Iku-Xb-hU3">
@@ -1006,7 +1014,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="zE9-2N-Gem"/>
         <segue reference="Ce3-Hw-9L8"/>
-        <segue reference="Krx-8P-fAO"/>
         <segue reference="2Os-12-LGy"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1018,7 +1025,7 @@
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <image name="photo.artframe" catalog="system" width="32" height="32"/>
         <image name="rectangle.stack.person.crop" catalog="system" width="128" height="122"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

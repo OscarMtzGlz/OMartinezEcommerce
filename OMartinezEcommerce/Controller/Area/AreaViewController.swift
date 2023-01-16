@@ -26,6 +26,17 @@ class AreaViewController: UIViewController {
         self.collectionView.register(UINib(nibName: "VentasCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductoCard")
         
         loadData()
+        
+        let tap = UITapGestureRecognizer(target: self,action:#selector(self.handleTap(_:)))
+        self.collectionView.addGestureRecognizer(tap)
+        self.collectionView.isUserInteractionEnabled = true
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer){
+        if let indexPath = self.collectionView?.indexPathForItem(at: sender.location(in: self.collectionView)){
+            self.idArea = self.areas[indexPath.row].IdArea
+            self.performSegue(withIdentifier: "DepartamentoSegues", sender: self)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,18 +83,21 @@ extension AreaViewController : UICollectionViewDelegate, UICollectionViewDataSou
         cell.ImageView.layer.cornerRadius = 20
         cell.container.layer.cornerRadius = 20
         
+        cell.isUserInteractionEnabled = false
+        
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.idArea = self.areas[indexPath.row].IdArea
-        self.performSegue(withIdentifier: "DepartamentoSegues", sender: self)
-    }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-//        if segue.identifier == "DepartamentoSegues" {
-//            let departamentoCollection = segue.destination as! DepartamentoCollectionViewController
-//            departamentoCollection.idArea = self.idArea
-//        }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        self.idArea = self.areas[indexPath.row].IdArea
+//        self.performSegue(withIdentifier: "DepartamentoSegues", sender: self)
 //    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "DepartamentoSegues" {
+            let departamentoCollection = segue.destination as! DepartamentoCollectionViewController
+            departamentoCollection.idArea = self.idArea
+        }
+    }
 }
