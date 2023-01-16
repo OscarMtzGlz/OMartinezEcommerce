@@ -184,13 +184,16 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buscar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6SM-HM-M6t">
                                 <rect key="frame" x="16" y="116" width="289" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6h-2w-Mky">
                                 <rect key="frame" x="302" y="116" width="75" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="BuscarAction:" destination="Z49-IK-yWF" eventType="touchUpInside" id="54e-ia-dQk"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Iuf-dt-heC">
                                 <rect key="frame" x="16" y="175" width="361" height="662"/>
@@ -230,7 +233,7 @@
                         <outlet property="collectionView" destination="Iuf-dt-heC" id="Mik-nC-i1E"/>
                         <outlet property="searchBtn" destination="W6h-2w-Mky" id="DTE-Rr-lbC"/>
                         <outlet property="searchField" destination="6SM-HM-M6t" id="Dly-cv-3fy"/>
-                        <segue destination="vbd-8o-9db" kind="show" id="Krx-8P-fAO"/>
+                        <segue destination="vbd-8o-9db" kind="show" identifier="BuscarSegues" id="Krx-8P-fAO"/>
                         <segue destination="DrK-Yi-uN9" kind="show" identifier="DepartamentoSegues" id="x6u-yK-SaX"/>
                     </connections>
                 </viewController>
@@ -259,6 +262,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="t9d-PI-OoP"/>
+                    <connections>
+                        <segue destination="vbd-8o-9db" kind="show" identifier="ProductosSegues" id="vvh-he-SlN"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVp-cc-8IN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1014,6 +1020,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="zE9-2N-Gem"/>
         <segue reference="Ce3-Hw-9L8"/>
+        <segue reference="Krx-8P-fAO"/>
         <segue reference="2Os-12-LGy"/>
     </inferredMetricsTieBreakers>
     <resources>

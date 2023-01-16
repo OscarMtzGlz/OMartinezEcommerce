@@ -62,7 +62,10 @@ class AreaViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func BuscarAction(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "BuscarSegues", sender: self)
+    }
+    
 }
 extension AreaViewController : UICollectionViewDelegate, UICollectionViewDataSource{
     
@@ -80,8 +83,10 @@ extension AreaViewController : UICollectionViewDelegate, UICollectionViewDataSou
         cell.NombreView.text = areas[indexPath.row].Nombre
         cell.CampoView.text = ""
         cell.ImageView.image = UIImage(systemName: "photo.artframe")
+        cell.CampoOp.text = ""
         cell.ImageView.layer.cornerRadius = 20
         cell.container.layer.cornerRadius = 20
+        cell.ButtonAdd.isHidden = true
         
         cell.isUserInteractionEnabled = false
         
@@ -98,6 +103,10 @@ extension AreaViewController : UICollectionViewDelegate, UICollectionViewDataSou
         if segue.identifier == "DepartamentoSegues" {
             let departamentoCollection = segue.destination as! DepartamentoCollectionViewController
             departamentoCollection.idArea = self.idArea
+        }
+        if segue.identifier == "BuscarSegues" {
+            let ventasCollection = segue.destination as! VentasCollectionViewController
+            ventasCollection.NombreProducto = self.searchField.text!
         }
     }
 }

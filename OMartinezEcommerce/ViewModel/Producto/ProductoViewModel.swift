@@ -172,4 +172,72 @@ class ProductoViewModel {
         sqlite3_close(context.db)
         return result
     }
+    
+    func GetByNombre(NombreProducto : String) -> Result {
+        var result = Result()
+        let context = DB.init()
+        let query = "SELECT IdProducto, Nombre, PrecioUnitario, Descripcion, Imagen FROM Producto WHERE Nombre LIKE '%\(NombreProducto)%'"
+        var statement : OpaquePointer? = nil
+        do{
+            if sqlite3_prepare_v2(context.db, query, -1, &statement, nil) == SQLITE_OK {
+                result.Objects = []
+                while sqlite3_step(statement) == SQLITE_ROW {
+                    var producto = Producto()
+                    producto.IdProducto = Int(sqlite3_column_int(statement, 0))
+                    producto.Nombre = String(cString: sqlite3_column_text(statement, 1))
+                    producto.PrecioUnitario = Double(sqlite3_column_double(statement, 2))
+                    producto.Descripcion = String(cString: sqlite3_column_text(statement, 3))
+                    
+                    if sqlite3_column_text(statement, 4) != nil{
+                        producto.Imagen = String(cString: sqlite3_column_text(statement, 4))
+                    }else{
+                        producto.Imagen = ""
+                    }
+                    result.Objects?.append(producto)
+                }
+                result.Correct = true
+            }
+        }catch let error{
+            result.Correct = false
+            result.Ex = error
+            result.ErrorMessage = error.localizedDescription
+        }
+        sqlite3_finalize(statement)
+        sqlite3_close(context.db)
+        return result
+    }
+    
+    func GetByIdDepartamento(idDepartamento : Int) -> Result {
+        var result = Result()
+        let context = DB.init()
+        let query = "SELECT IdProducto, Nombre, PrecioUnitario, Descripcion, Imagen FROM Producto WHERE IdDepartamento = \(idDepartamento)"
+        var statement : OpaquePointer? = nil
+        do{
+            if sqlite3_prepare_v2(context.db, query, -1, &statement, nil) == SQLITE_OK {
+                result.Objects = []
+                while sqlite3_step(statement) == SQLITE_ROW {
+                    var producto = Producto()
+                    producto.IdProducto = Int(sqlite3_column_int(statement, 0))
+                    producto.Nombre = String(cString: sqlite3_column_text(statement, 1))
+                    producto.PrecioUnitario = Double(sqlite3_column_double(statement, 2))
+                    producto.Descripcion = String(cString: sqlite3_column_text(statement, 3))
+                    
+                    if sqlite3_column_text(statement, 4) != nil{
+                        producto.Imagen = String(cString: sqlite3_column_text(statement, 4))
+                    }else{
+                        producto.Imagen = ""
+                    }
+                    result.Objects?.append(producto)
+                }
+                result.Correct = true
+            }
+        }catch let error{
+            result.Correct = false
+            result.Ex = error
+            result.ErrorMessage = error.localizedDescription
+        }
+        sqlite3_finalize(statement)
+        sqlite3_close(context.db)
+        return result
+    }
 }

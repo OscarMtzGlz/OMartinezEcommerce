@@ -12,6 +12,7 @@ class DepartamentoCollectionViewController: UICollectionViewController {
     let departamentoViewModel = DepartamentoViewModel()
     var departamentos = [Departamento]()
     var idArea : Int = 0
+    var idDepartamento : Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,18 @@ class DepartamentoCollectionViewController: UICollectionViewController {
         collectionView.register(UINib(nibName: "VentasCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "ProductoCard")
         loadData()
 
+        
+        let tap = UITapGestureRecognizer(target: self,action:#selector(self.handleTap(_:)))
+        self.collectionView.addGestureRecognizer(tap)
+        self.collectionView.isUserInteractionEnabled = true
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer){
+        if let indexPath = self.collectionView?.indexPathForItem(at: sender.location(in: self.collectionView)){
+            self.idDepartamento = self.departamentos[indexPath.row].IdDepartamento
+            self.performSegue(withIdentifier: "ProductosSegues", sender: self)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,11 +79,25 @@ class DepartamentoCollectionViewController: UICollectionViewController {
         // Configure the cell
         cell.NombreView.text = departamentos[indexPath.row].Nombre
         cell.CampoView.text = ""
+        cell.CampoOp.text = ""
         cell.ImageView.image = UIImage(systemName: "photo.artframe")
         cell.ImageView.layer.cornerRadius = 20
         cell.container.layer.cornerRadius = 20
+        cell.ButtonAdd.isHidden = true
     
         return cell
+    }
+    
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        self.idDepartamento = departamentos[indexPath.row].IdDepartamento
+//        self.performSegue(withIdentifier: "ProductosSegues", sender: self)
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProductosSegues" {
+            let productoCollection = segue.destination as! VentasCollectionViewController
+            productoCollection.idDepartamento = self.idDepartamento
+        }
     }
 
     // MARK: UICollectionViewDelegate

@@ -74,7 +74,7 @@ class UGetAllTableViewController: UITableViewController {
         cell.CelularView.text = usuarios[indexPath.row].Celular
         
         if usuarios[indexPath.row].Imagen == "" {
-            cell.ImageView.image = UIImage(named: "User")
+            cell.ImageView.image = UIImage(systemName: "photo.artframe")
         }else{
             let imageData = Data(base64Encoded: usuarios[indexPath.row].Imagen, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
             cell.ImageView.image = UIImage(data: imageData!)

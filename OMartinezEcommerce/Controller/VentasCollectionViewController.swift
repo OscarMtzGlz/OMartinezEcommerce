@@ -11,6 +11,8 @@ class VentasCollectionViewController: UICollectionViewController{
 
     let productoViewModel = ProductoViewModel()
     var productos = [Producto]()
+    var NombreProducto : String = ""
+    var idDepartamento : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +23,14 @@ class VentasCollectionViewController: UICollectionViewController{
         // Register cell classes
         collectionView.register(UINib(nibName:"VentasCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "ProductoCard")
         //collectionView.register(UINib(nibName: "VentasCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductoCard")
-        loadData()
-        
+        //loadData()
+        validar()
 
         // Do any additional setup after loading the view.
     }
-    override func viewWillAppear(_ animated: Bool) {
-        loadData()
-    }
+    //override func viewWillAppear(_ animated: Bool) {
+      //  loadData()
+    //}
     
     func loadData(){
         let result = productoViewModel.GetAll()
@@ -37,6 +39,25 @@ class VentasCollectionViewController: UICollectionViewController{
             self.collectionView.reloadData()
         }else{
             //alert
+        }
+    }
+    
+    func validar(){
+        if self.NombreProducto == ""{
+            loadData()
+        }else{
+            let result = productoViewModel.GetByNombre(NombreProducto: self.NombreProducto)
+            if result.Correct {
+                productos = result.Objects! as! [Producto]
+                self.collectionView.reloadData()
+            }
+        }
+        if self.idDepartamento != 0{
+            let result = productoViewModel.GetByIdDepartamento(idDepartamento: self.idDepartamento)
+            if result.Correct {
+                productos = result.Objects! as! [Producto]
+                self.collectionView.reloadData()
+            }
         }
     }
 
@@ -69,15 +90,26 @@ class VentasCollectionViewController: UICollectionViewController{
         // Configure the cell
         cell.NombreView.text = productos[indexPath.row].Nombre
         cell.CampoView.text = String(productos[indexPath.row].PrecioUnitario)
+        cell.CampoOp.text = productos[indexPath.row].Descripcion
         
         if productos[indexPath.row].Imagen == "" {
-            cell.ImageView.image = UIImage(named: "User")
+            cell.ImageView.image = UIImage(systemName: "photo.artframe")
         }else{
             let imageData = Data(base64Encoded: productos[indexPath.row].Imagen, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
             cell.ImageView.image = UIImage(data: imageData!)
         }
+        cell.ImageView.layer.cornerRadius = 20
+        cell.container.layer.cornerRadius = 20
+        
+        //cell.ButtonAdd
+        cell.ButtonAdd.tag = indexPath.row
+        cell.ButtonAdd.addTarget(self, action: #selector(self.funcAdd), for: .touchUpInside)
         
         return cell
+    }
+    
+    @objc func funcAdd(sender : UIButton){
+        print(sender.tag)
     }
 
     // MARK: UICollectionViewDelegate

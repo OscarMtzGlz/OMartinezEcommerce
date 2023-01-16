@@ -64,7 +64,7 @@ class GetAllTableViewController: UITableViewController {
         cell.Descripcionlbl.text = productos[indexPath.row].Descripcion
         
         if productos[indexPath.row].Imagen == "" {
-            cell.ImageUser.image = UIImage(named: "User")
+            cell.ImageUser.image = UIImage(systemName: "photo.artframe")
         }else{
             let imageData = Data(base64Encoded: productos[indexPath.row].Imagen, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
             cell.ImageUser.image = UIImage(data: imageData!)
