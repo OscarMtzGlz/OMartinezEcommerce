@@ -101,7 +101,7 @@ class ProductoViewModel {
     func GetAll() -> Result{
         var result = Result()
         let context = DB.init()
-        let query = "SELECT IdProducto,Nombre,PrecioUnitario,Stock,IdProveedor,IdDepartamento,Descripcion,Imagen FROM Producto"
+        let query = "SELECT IdProducto,Producto.Nombre,PrecioUnitario,Stock,Producto.IdProveedor,Producto.IdDepartamento,Descripcion,Imagen,Proveedor.Nombre,Departamento.Nombre FROM Producto INNER JOIN Proveedor ON Producto.IdProveedor = Proveedor.IdProveedor INNER JOIN Departamento ON Producto.IdDepartamento = Departamento.IdDepartamento"
         var statement : OpaquePointer? = nil
         do{
             if try sqlite3_prepare_v2(context.db, query, -1, &statement, nil) == SQLITE_OK {
@@ -125,6 +125,9 @@ class ProductoViewModel {
                         producto.Imagen = ""
                     }
                     
+                    producto.Proveedor.Nombre = String(cString: sqlite3_column_text(statement, 8))
+                    producto.Departamento.Nombre = String(cString: sqlite3_column_text(statement, 9))
+                    
                     result.Objects?.append(producto)
                 }
                 result.Correct = true
@@ -142,7 +145,7 @@ class ProductoViewModel {
     func GetById(idProducto : Int) -> Result{
         var result = Result()
         let context = DB.init()
-        let query = "SELECT IdProducto,Nombre,PrecioUnitario,Stock,IdProveedor,IdDepartamento,Descripcion FROM Producto WHERE IdProducto = ?"
+        let query = "SELECT IdProducto,Producto.Nombre,PrecioUnitario,Stock,Producto.IdProveedor,Producto.IdDepartamento,Descripcion,Proveedor.Nombre,Departamento.Nombre,Imagen FROM Producto INNER JOIN Proveedor ON Producto.IdProveedor = Proveedor.IdProveedor INNER JOIN Departamento ON Producto.IdDepartamento = Departamento.IdDepartamento WHERE IdProducto = ?"
         var statement : OpaquePointer? = nil
         do{
             if try sqlite3_prepare_v2(context.db, query, -1, &statement, nil) == SQLITE_OK {
@@ -158,6 +161,13 @@ class ProductoViewModel {
                     producto.Departamento = Departamento()
                     producto.Departamento.IdDepartamento = Int(sqlite3_column_int(statement, 5))
                     producto.Descripcion = String(cString: sqlite3_column_text(statement, 6))
+                    producto.Proveedor.Nombre = String(cString: sqlite3_column_text(statement, 7))
+                    producto.Departamento.Nombre = String(cString: sqlite3_column_text(statement, 8))
+                    if sqlite3_column_text(statement, 9) != nil {
+                        producto.Imagen = String(cString: sqlite3_column_text(statement, 9))
+                    }else{
+                        producto.Imagen = ""
+                    }
                     
                     result.Object = producto
                     result.Correct = true

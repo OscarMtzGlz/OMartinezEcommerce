@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22C65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Rol" representedClassName="Rol" syncable="YES" codeGenerationType="class">
+        <attribute name="idRol" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Usuario" representedClassName="Usuario" syncable="YES" codeGenerationType="class">
         <attribute name="apellidoMaterno" optional="YES" attributeType="String"/>
         <attribute name="apellidoPaterno" optional="YES" attributeType="String"/>
@@ -14,5 +18,6 @@
         <attribute name="sexo" optional="YES" attributeType="String"/>
         <attribute name="telefono" optional="YES" attributeType="String"/>
         <attribute name="userName" optional="YES" attributeType="String"/>
+        <relationship name="idrol" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Rol"/>
     </entity>
 </model>

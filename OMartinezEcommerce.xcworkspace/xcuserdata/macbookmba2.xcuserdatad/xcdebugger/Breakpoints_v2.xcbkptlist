@@ -7,32 +7,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5CA39874-834F-433E-A3C1-7286AA64C880"
+            uuid = "91BE8E60-179E-4643-A37E-5B362AA34D3C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OMartinezEcommerceUITests/OMartinezEcommerceUITests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "testExample()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "91BE8E60-179E-4643-A37E-5B362AA34D3C - 9775526dd21463b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OMartinezEcommerceUITests.OMartinezEcommerceUITests.testExample() throws -&gt; ()"
+                  moduleName = "OMartinezEcommerceUITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookmba2/Documents/Oscar%20Jesus%20Martinez%20Gonzalez/OMartinezEcommerce/OMartinezEcommerceUITests/OMartinezEcommerceUITests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1280">
+               </Location>
+               <Location
+                  uuid = "91BE8E60-179E-4643-A37E-5B362AA34D3C - 9775526dd214622f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OMartinezEcommerceUITests.OMartinezEcommerceUITests.testExample() throws -&gt; ()"
+                  moduleName = "OMartinezEcommerceUITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookmba2/Documents/Oscar%20Jesus%20Martinez%20Gonzalez/OMartinezEcommerce/OMartinezEcommerceUITests/OMartinezEcommerceUITests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1556">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DA8CE7B-F4A8-4381-8292-DF7075834983"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OMartinezEcommerce/Controller/VentasCollectionViewController.swift"
+            filePath = "OMartinezEcommerceUITests/OMartinezEcommerceUITests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "validar()"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "testExample()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C3B3EFB6-2DF5-4C2A-8B31-635F4AB4D93B"
+            uuid = "46861B54-EEFB-4095-AE03-7229216E3B5C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OMartinezEcommerceUITests/OMartinezEcommerceUITests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "testExample()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E45E2F54-EEE6-4D47-A9A8-A9E5A2662DCB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OMartinezEcommerce/ViewModel/Producto/ProductoViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "GetByIdDepartamento(idDepartamento:)"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "GetById(idProducto:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

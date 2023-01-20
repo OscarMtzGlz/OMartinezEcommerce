@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C6p-aB-0B7">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -24,8 +25,8 @@
                                     <constraint firstAttribute="width" constant="241" id="gDg-mW-h2o"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="8l4-HI-B42">
-                                <rect key="frame" x="61.666666666666657" y="248" width="270" height="520.33333333333337"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="8l4-HI-B42">
+                                <rect key="frame" x="61.666666666666657" y="305" width="270" height="406.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ZZ-dx-eNx">
                                         <rect key="frame" x="0.0" y="0.0" width="270" height="34"/>
@@ -38,7 +39,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PrecioUnitario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Me-dt-tiW">
-                                        <rect key="frame" x="0.0" y="81" width="270" height="34"/>
+                                        <rect key="frame" x="0.0" y="62" width="270" height="34"/>
                                         <color key="backgroundColor" red="0.86254297520000001" green="0.86254297520000001" blue="0.86254297520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -48,7 +49,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Stock" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lu0-BV-xWG">
-                                        <rect key="frame" x="0.0" y="162" width="270" height="34"/>
+                                        <rect key="frame" x="0.0" y="124" width="270" height="34"/>
                                         <color key="backgroundColor" red="0.86254297520000001" green="0.86254297520000001" blue="0.86254297520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -58,7 +59,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Proveedor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gpQ-wL-Yyg" customClass="JRDropDown">
-                                        <rect key="frame" x="0.0" y="243" width="270" height="34"/>
+                                        <rect key="frame" x="0.0" y="186" width="270" height="34"/>
                                         <color key="backgroundColor" red="0.86254297520000001" green="0.86254297520000001" blue="0.86254297520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -67,8 +68,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IdDepartamento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNZ-p6-89v">
-                                        <rect key="frame" x="0.0" y="324" width="270" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Departamento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNZ-p6-89v" customClass="JRDropDown">
+                                        <rect key="frame" x="0.0" y="248" width="270" height="34"/>
                                         <color key="backgroundColor" red="0.86254297520000001" green="0.86254297520000001" blue="0.86254297520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -78,7 +79,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descripcion" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N2h-NQ-rh6">
-                                        <rect key="frame" x="0.0" y="405" width="270" height="34"/>
+                                        <rect key="frame" x="0.0" y="310" width="270" height="34"/>
                                         <color key="backgroundColor" red="0.86254297520000001" green="0.86254297520000001" blue="0.86254297520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -88,7 +89,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wo1-IM-1pI">
-                                        <rect key="frame" x="0.0" y="486" width="270" height="34.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="372" width="270" height="34.333333333333314"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="270" id="rMG-G8-0H1"/>
                                         </constraints>
@@ -125,8 +126,8 @@
                     <navigationItem key="navigationItem" id="Iwy-JA-QOQ"/>
                     <connections>
                         <outlet property="ActionBtn" destination="Wo1-IM-1pI" id="J82-Bl-PDK"/>
+                        <outlet property="DepartamentoDropDown" destination="JNZ-p6-89v" id="pRX-fM-ywr"/>
                         <outlet property="DescripcionField" destination="N2h-NQ-rh6" id="kch-hG-Ydk"/>
-                        <outlet property="IdDepartamentoField" destination="JNZ-p6-89v" id="Z3C-gL-6Wc"/>
                         <outlet property="NombreField" destination="7ZZ-dx-eNx" id="0CY-t6-Ef9"/>
                         <outlet property="PrecioUnitarioField" destination="8Me-dt-tiW" id="wn5-eB-UyV"/>
                         <outlet property="ProveedorDropDown" destination="gpQ-wL-Yyg" id="9Mm-Sx-EyH"/>
@@ -159,7 +160,7 @@
         <!--Ventas-->
         <scene sceneID="SBo-oU-ksL">
             <objects>
-                <navigationController id="vCk-Kc-aQg" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="navVentas" id="vCk-Kc-aQg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Ventas" image="cart.fill" catalog="system" selectedImage="cart.fill" id="98X-Ap-4LL"/>
                     <size key="freeformSize" width="393" height="852"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="woE-6S-aol">
@@ -184,6 +185,7 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buscar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6SM-HM-M6t">
                                 <rect key="frame" x="16" y="116" width="289" height="34"/>
+                                <color key="backgroundColor" red="0.85738833599999997" green="0.85738833599999997" blue="0.85738833599999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -591,10 +593,10 @@
             </objects>
             <point key="canvasLocation" x="-3889.3129770992364" y="902.8169014084508"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--NavigationLogin-->
         <scene sceneID="t8k-aM-6bK">
             <objects>
-                <navigationController id="wpl-d9-V9c" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="navlogin" title="NavigationLogin" id="wpl-d9-V9c" sceneMemberID="viewController">
                     <size key="freeformSize" width="393" height="852"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QoZ-ch-yda">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -612,18 +614,18 @@
         <scene sceneID="aPO-P5-f9s">
             <objects>
                 <tabBarController title="TabController" id="C6p-aB-0B7" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="9Js-sE-Qx4"/>
+                    <navigationItem key="navigationItem" customizationIdentifier="NavigateBarLogin" id="9Js-sE-Qx4"/>
                     <size key="freeformSize" width="393" height="852"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AZY-KD-GKI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="UIs-4L-te8" kind="relationship" relationship="viewControllers" id="DLP-3R-q5x"/>
                         <segue destination="tNS-Us-a2I" kind="relationship" relationship="viewControllers" id="qza-MW-Eal"/>
                         <segue destination="XJK-ae-eMr" kind="relationship" relationship="viewControllers" id="VWf-o0-iyf"/>
-                        <segue destination="9P4-qt-O9a" kind="relationship" relationship="viewControllers" id="1y6-k9-pdM"/>
                         <segue destination="vCk-Kc-aQg" kind="relationship" relationship="viewControllers" id="7LA-yv-Rwa"/>
                     </connections>
                 </tabBarController>
@@ -700,55 +702,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEn-Yz-3x2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1190" y="-618"/>
-        </scene>
-        <!--Proveedor-->
-        <scene sceneID="BU7-qg-saJ">
-            <objects>
-                <navigationController id="9P4-qt-O9a" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Proveedor" image="rectangle.stack.person.crop" catalog="system" selectedImage="rectangle.stack.person.crop" id="VKN-mx-jx8"/>
-                    <size key="freeformSize" width="393" height="852"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XG5-N7-r8J">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="9q8-h9-m7Q" kind="relationship" relationship="rootViewController" id="g6J-ES-fkl"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="56J-S3-6vy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2092" y="-1683"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="Tp0-cF-I9I">
-            <objects>
-                <tableViewController id="9q8-h9-m7Q" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="jce-VE-pbW">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <connections>
-                            <outlet property="dataSource" destination="9q8-h9-m7Q" id="VM4-EE-6eX"/>
-                            <outlet property="delegate" destination="9q8-h9-m7Q" id="blH-dU-Sth"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="rkB-SP-ErJ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="GCz-p5-Np9">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="r00-Fr-yck">
-                                <rect key="frame" x="290" y="4.6666666666666679" width="87" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="+"/>
-                                <connections>
-                                    <segue destination="NWg-ln-a9w" kind="show" id="D3l-pT-0Af"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4UY-BQ-7gM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1160" y="-1684"/>
         </scene>
         <!--Proveedor View Controller-->
         <scene sceneID="FZT-ta-JgP">
@@ -990,6 +943,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="separatorColor" red="0.5927835052" green="0.5927835052" blue="0.5927835052" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <connections>
                             <outlet property="dataSource" destination="Ra4-qq-xBs" id="HAk-Ky-KAF"/>
                             <outlet property="delegate" destination="Ra4-qq-xBs" id="fBT-ag-MZn"/>
@@ -1032,8 +986,7 @@
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="photo.artframe" catalog="system" width="32" height="32"/>
-        <image name="rectangle.stack.person.crop" catalog="system" width="128" height="122"/>
+        <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -17,9 +17,10 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var NombreField: UITextField!
     @IBOutlet weak var PrecioUnitarioField: UITextField!
     @IBOutlet weak var StockField: UITextField!
-    @IBOutlet weak var IdDepartamentoField: UITextField!
+    //@IBOutlet weak var IdDepartamentoField: UITextField!
     @IBOutlet weak var DescripcionField: UITextField!
     @IBOutlet weak var ProveedorDropDown: DropDown!
+    @IBOutlet weak var DepartamentoDropDown: DropDown!
     
     let productoViewModel = ProductoViewModel()
     var productoModel : Producto? = nil
@@ -27,6 +28,8 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
     let imagePicker = UIImagePickerController()
     var IdProveedor : Int = 0
     var proveedorViewModel = ProveedorViewModel()
+    var IdDepartamento : Int = 0
+    var departamentoViewModel = DepartamentoViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +42,15 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
         
         ProveedorDropDown.optionArray = [String]()
         ProveedorDropDown.optionIds = [Int]()
+        DepartamentoDropDown.optionArray = [String]()
+        DepartamentoDropDown.optionIds = [Int]()
         loadData()
         // Do any additional setup after loading the view.
         ProveedorDropDown.didSelect{ selectedText, index, id in
             self.IdProveedor = id
+        }
+        DepartamentoDropDown.didSelect{ selectedText, index, id in
+            self.IdDepartamento = id
         }
     }
     
@@ -54,6 +62,13 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
                 ProveedorDropDown.optionIds?.append(proveedor.IdProveedor)
             }
         }
+        let result2 = departamentoViewModel.GetAll()
+        if result2.Correct {
+            for departamento in result2.Objects as! [Departamento]{
+                DepartamentoDropDown.optionArray.append(departamento.Nombre)
+                DepartamentoDropDown.optionIds?.append(departamento.IdDepartamento)
+            }
+        }
     }
     
     func validar(){
@@ -63,7 +78,7 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
             PrecioUnitarioField.text = ""
             StockField.text = ""
             ProveedorDropDown.text = ""
-            IdDepartamentoField.text = ""
+            DepartamentoDropDown.text = ""
             DescripcionField.text = ""
             imageView.image = UIImage(named: "User")
         }else{
@@ -75,11 +90,11 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
                 NombreField.text = producto.Nombre
                 PrecioUnitarioField.text = String(producto.PrecioUnitario)
                 StockField.text = String(producto.Stock)
-                ProveedorDropDown.text = String(producto.Proveedor.IdProveedor)
-                IdDepartamentoField.text = String(producto.Departamento.IdDepartamento)
+                ProveedorDropDown.text = producto.Proveedor.Nombre
+                DepartamentoDropDown.text = producto.Departamento.Nombre
                 DescripcionField.text = producto.Descripcion
-                if producto.Imagen == nil{
-                    imageView.image = UIImage(named: "User")
+                if producto.Imagen == nil {
+                    imageView.image = UIImage(systemName: "photo.artframe")
                 }else{
                     let imageData = Data(base64Encoded: producto.Imagen, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
                     imageView.image = UIImage(data: imageData!)
@@ -105,7 +120,8 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
         alertVacio.addAction(ok)
         alertCorrect.addAction(ok)
         alertIncorrect.addAction(ok)
-        
+        //let numbers = [0]
+        //let _ = numbers[1]
         guard let nombre = NombreField.text else{
             self.present(alertVacio, animated: false)
             return
@@ -115,14 +131,6 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
             return
         }
         guard let stock = Int(StockField.text!) else{
-            self.present(alertVacio, animated: false)
-            return
-        }
-        guard let idProveedor = Int(ProveedorDropDown.text!) else{
-            self.present(alertVacio, animated: false)
-            return
-        }
-        guard let idDepartamento = Int(IdDepartamentoField.text!) else{
             self.present(alertVacio, animated: false)
             return
         }
@@ -140,9 +148,10 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
         }
         
         var proveedor = Proveedor()
-        proveedor.IdProveedor = idProveedor
+        proveedor.IdProveedor = self.IdProveedor
         var departamento = Departamento()
-        departamento.IdDepartamento = idDepartamento
+        departamento.IdDepartamento = self.IdDepartamento
+        
         
         productoModel = Producto(IdProducto: self.idProducto, Nombre: nombre, PrecioUnitario: precioUnitario, Stock: stock, Proveedor: proveedor , Departamento: departamento, Descripcion: descripcion, Imagen: imageString)
         

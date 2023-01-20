@@ -15,7 +15,9 @@ class ProductoTableViewCell: SwipeTableViewCell {
     @IBOutlet weak var Stocklbl: UILabel!
     @IBOutlet weak var PrecioUnitariolbl: UILabel!
     @IBOutlet weak var Nombrelbl: UILabel!
-    
+    @IBOutlet weak var Departamentolbl: UILabel!
+    @IBOutlet weak var Proveedorlbl: UILabel!
+    @IBOutlet weak var viewContainer: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

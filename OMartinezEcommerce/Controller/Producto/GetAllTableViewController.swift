@@ -58,10 +58,13 @@ class GetAllTableViewController: UITableViewController {
         
         cell.delegate = self
         
+        cell.viewContainer.layer.cornerRadius = 20
         cell.Nombrelbl.text = productos[indexPath.row].Nombre
-        cell.PrecioUnitariolbl.text = String(productos[indexPath.row].PrecioUnitario)
-        cell.Stocklbl.text = String(productos[indexPath.row].Stock)
+        cell.PrecioUnitariolbl.text = "$"+String(productos[indexPath.row].PrecioUnitario)
+        cell.Stocklbl.text = "Stock:"+String(productos[indexPath.row].Stock)
         cell.Descripcionlbl.text = productos[indexPath.row].Descripcion
+        cell.Proveedorlbl.text = productos[indexPath.row].Proveedor.Nombre
+        cell.Departamentolbl.text = productos[indexPath.row].Departamento.Nombre
         
         if productos[indexPath.row].Imagen == "" {
             cell.ImageUser.image = UIImage(systemName: "photo.artframe")

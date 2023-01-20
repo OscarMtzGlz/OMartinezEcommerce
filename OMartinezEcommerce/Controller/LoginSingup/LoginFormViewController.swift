@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import IQKeyboardManagerSwift
 
 class LoginFormViewController: UIViewController {
 
@@ -18,13 +19,23 @@ class LoginFormViewController: UIViewController {
         super.viewDidLoad()
 
         ViewContainer.layer.cornerRadius = 20
-        // Do any additional setup after loading the view.
+         //Do any additional setup after loading the view.
+//        let button = UIButton(type: .roundedRect)
+//        button.frame = CGRect(x: 20, y: 50, width: 100, height: 30)
+//        button.setTitle("Test Crash", for: [])
+//        button.addTarget(self, action: #selector(self.crashButtonTapped(_:)), for: .touchUpInside)
+//        view.addSubview(button)
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
+//    @IBAction func crashButtonTapped(_ sender: AnyObject) {
+//          let numbers = [0]
+//          let _ = numbers[1]
+//    }
     
     @IBAction func LoginAction(_ sender: UIButton) {
         let alertVacio = UIAlertController(title: "Alerta", message: "Campo vacio", preferredStyle: .alert)
-        let alertCorrect = UIAlertController(title: "Confirmación", message: "Usuario creado", preferredStyle: .alert)
-        let alertIncorrect = UIAlertController(title: "Error", message: "El usuario no pudo ser registrado", preferredStyle: .alert)
+        let alertCorrect = UIAlertController(title: "Confirmación", message: "Sesión iniciada", preferredStyle: .alert)
+        let alertIncorrect = UIAlertController(title: "Error", message: "Email o contraseña incorrectos, No se logro iniciar sesión", preferredStyle: .alert)
         let OK = UIAlertAction(title: "OK", style: .default)
         
         alertVacio.addAction(OK)

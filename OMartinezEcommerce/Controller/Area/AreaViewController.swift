@@ -30,6 +30,8 @@ class AreaViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self,action:#selector(self.handleTap(_:)))
         self.collectionView.addGestureRecognizer(tap)
         self.collectionView.isUserInteractionEnabled = true
+        
+        
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer){

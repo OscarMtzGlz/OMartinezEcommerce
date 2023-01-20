@@ -25,7 +25,6 @@ class VentasCollectionViewController: UICollectionViewController{
         //collectionView.register(UINib(nibName: "VentasCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductoCard")
         //loadData()
         validar()
-
         // Do any additional setup after loading the view.
     }
     //override func viewWillAppear(_ animated: Bool) {
