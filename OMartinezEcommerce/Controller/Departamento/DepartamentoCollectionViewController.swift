@@ -50,6 +50,10 @@ class DepartamentoCollectionViewController: UICollectionViewController {
         }
     }
 
+    @IBAction func CarAction(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "CarSegue", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 

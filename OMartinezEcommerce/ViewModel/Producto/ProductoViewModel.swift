@@ -145,7 +145,7 @@ class ProductoViewModel {
     func GetById(idProducto : Int) -> Result{
         var result = Result()
         let context = DB.init()
-        let query = "SELECT IdProducto,Producto.Nombre,PrecioUnitario,Stock,Producto.IdProveedor,Producto.IdDepartamento,Descripcion,Proveedor.Nombre,Departamento.Nombre,Imagen FROM Producto INNER JOIN Proveedor ON Producto.IdProveedor = Proveedor.IdProveedor INNER JOIN Departamento ON Producto.IdDepartamento = Departamento.IdDepartamento WHERE IdProducto = ?"
+        let query = "SELECT IdProducto,Producto.Nombre,PrecioUnitario,Stock,Producto.IdProveedor,Producto.IdDepartamento,Descripcion,Proveedor.Nombre,Departamento.Nombre,Imagen,Departamento.IdArea,Area.Nombre FROM Producto INNER JOIN Proveedor ON Producto.IdProveedor = Proveedor.IdProveedor INNER JOIN Departamento ON Producto.IdDepartamento = Departamento.IdDepartamento INNER JOIN Area ON Area.IdArea = Departamento.IdArea WHERE IdProducto = ?"
         var statement : OpaquePointer? = nil
         do{
             if try sqlite3_prepare_v2(context.db, query, -1, &statement, nil) == SQLITE_OK {
@@ -168,6 +168,9 @@ class ProductoViewModel {
                     }else{
                         producto.Imagen = ""
                     }
+                    producto.Departamento.Area = Area()
+                    producto.Departamento.Area.IdArea = Int(sqlite3_column_int(statement, 10))
+                    producto.Departamento.Area.Nombre = String(cString: sqlite3_column_text(statement, 11))
                     
                     result.Object = producto
                     result.Correct = true

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import iOSDropDown
 
 class UsuarioViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -22,11 +23,13 @@ class UsuarioViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var CelularField: UITextField!
     @IBOutlet weak var TelefonoField: UITextField!
     @IBOutlet weak var ActionBtn: UIButton!
+    @IBOutlet weak var RolDropDown: DropDown!
     
     let usuarioViewModel = UsuarioViewModel()
     var usuarioModel : UsuarioC? = nil
     let imagePicker = UIImagePickerController()
     var posicionUsuario : Int = 0
+    var idRol : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,13 @@ class UsuarioViewController: UIViewController, UIImagePickerControllerDelegate, 
         imagePicker.isEditing = false
         
         //ActionBtn.setTitle("Agregar", for: .normal)
+        
+        RolDropDown.optionArray = ["Administrador", "Cliente", "Proveedor"]
+        RolDropDown.optionIds = [1,2,3]
+        
+        RolDropDown.didSelect(){ selectedText, index, id in
+            self.idRol = id
+        }
         
         validar()
         // Do any additional setup after loading the view.
