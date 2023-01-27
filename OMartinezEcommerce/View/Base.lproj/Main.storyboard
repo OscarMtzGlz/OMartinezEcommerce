@@ -754,7 +754,7 @@
                                             <constraint firstAttribute="height" constant="50" id="FNp-Yq-fCz"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tZ-Xz-9Y3">
                                         <rect key="frame" x="50" y="235.00000000000006" width="273" height="50"/>
@@ -1330,6 +1330,7 @@
         <segue reference="vvh-he-SlN"/>
         <segue reference="2Os-12-LGy"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" name="Bg3"/>
     <resources>
         <image name="basket" catalog="system" width="128" height="108"/>
         <image name="camera" catalog="system" width="128" height="93"/>

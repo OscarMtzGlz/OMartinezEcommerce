@@ -55,6 +55,8 @@ class LoginFormViewController: UIViewController {
             if let error = error {
                 self.present(alertIncorrect, animated: false)
             }else{
+                self.EmailField.text = ""
+                self.PasswordField.text = ""
                 self.performSegue(withIdentifier: "loginSegue", sender: self)
                 self.present(alertCorrect, animated: false)
             }

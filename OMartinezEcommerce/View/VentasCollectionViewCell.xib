@@ -103,7 +103,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" name="titles"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="H5V-Mc-zDc" secondAttribute="trailing" id="Hn0-c6-Lhh"/>
                 <constraint firstItem="H5V-Mc-zDc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dMS-rm-Dwm"/>
@@ -128,9 +128,6 @@
         </namedColor>
         <namedColor name="BgTerciario">
             <color red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="titles">
-            <color red="1" green="0.98431372549019602" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
