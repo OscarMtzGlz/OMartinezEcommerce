@@ -53,6 +53,7 @@ class LoginFormViewController: UIViewController {
         
         Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
             if let error = error {
+                print(error)
                 self.present(alertIncorrect, animated: false)
             }else{
                 self.EmailField.text = ""

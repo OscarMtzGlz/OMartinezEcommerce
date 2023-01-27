@@ -60,7 +60,7 @@ class CarritoViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "FinalizarSegue"{
-            var finalizarView = segue.destination as! FinalizarViewController
+            let finalizarView = segue.destination as! FinalizarViewController
             finalizarView.total = self.TotalVenta
             finalizarView.cantidadProductos = self.ventaproductos.count
         }
@@ -79,10 +79,10 @@ extension CarritoViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CarritoCell", for: indexPath) as! CarritoTableViewCell
         
-        var cantidad = Double(ventaproductos[indexPath.row].Cantidad)
-        var precio = ventaproductos[indexPath.row].Producto.PrecioUnitario
+        let cantidad = Double(ventaproductos[indexPath.row].Cantidad)
+        let precio = ventaproductos[indexPath.row].Producto.PrecioUnitario
 
-        var subtotal = cantidad * precio
+        let subtotal = cantidad * precio
         self.TotalVenta = TotalVenta + ventaproductos[indexPath.row].Total
         TotalView.text = "Total: $\(TotalVenta)"
         cell.delegate = self

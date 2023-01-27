@@ -85,7 +85,7 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
             ActionBtn.setTitle("Modificar", for: UIControl.State.normal)
             let result = productoViewModel.GetById(idProducto: self.idProducto)
             if result.Correct {
-                var producto = result.Object! as! Producto
+                let producto = result.Object! as! Producto
                 
                 NombreField.text = producto.Nombre
                 PrecioUnitarioField.text = String(producto.PrecioUnitario)
@@ -95,7 +95,7 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
                 DepartamentoDropDown.text = producto.Departamento.Nombre
                 self.IdDepartamento = producto.Departamento.IdDepartamento
                 DescripcionField.text = producto.Descripcion
-                if producto.Imagen == nil {
+                if producto.Imagen == "" {
                     imageView.image = UIImage(systemName: "photo.artframe")
                 }else{
                     let imageData = Data(base64Encoded: producto.Imagen, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
