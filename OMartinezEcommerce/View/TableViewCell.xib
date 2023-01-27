@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,6 +69,7 @@
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uPS-yN-3gz">
                                 <rect key="frame" x="5" y="6.6666666666666572" width="150" height="229"/>
+                                <color key="tintColor" name="Bg3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="COP-zh-7qq"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="mRn-q1-ziZ"/>
@@ -75,7 +77,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.86082474226804129" green="0.84521717784058248" blue="0.79839448455820605" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="BgTerciario"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="zlf-J2-i2q" secondAttribute="bottom" constant="5" id="5oe-Zs-YSI"/>
@@ -113,5 +115,11 @@
     </objects>
     <resources>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <namedColor name="Bg3">
+            <color red="0.28627450980392155" green="0.33333333333333331" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BgTerciario">
+            <color red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -31,12 +31,16 @@ class GetAllTableViewController: UITableViewController {
     }
     
     func loadData(){
+        let alert = UIAlertController(title: "Error", message: "Ocurrio un error", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        
         let result = productoViewModel.GetAll()
         if result.Correct {
             productos = result.Objects! as! [Producto]
             tableView.reloadData()
         }else{
-            //alert
+            self.present(alert, animated: false)
         }
     }
 
@@ -161,6 +165,7 @@ extension GetAllTableViewController: SwipeTableViewCellDelegate {
             let updateAction = SwipeAction(style: .destructive, title: "Update"){ action, indexPath in
                 self.idProducto = self.productos[indexPath.row].IdProducto
                 self.performSegue(withIdentifier: "Updatesegues", sender: self)
+                self.loadData()
             }
             
             updateAction.image = UIImage(named: "update")

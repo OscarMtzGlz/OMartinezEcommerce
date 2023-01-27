@@ -10,6 +10,7 @@ import UIKit
 class VentasCollectionViewController: UICollectionViewController{
 
     let productoViewModel = ProductoViewModel()
+    let ventaViewModel = VentaViewModel()
     var productos = [Producto]()
     var NombreProducto : String = ""
     var idDepartamento : Int = 0
@@ -51,12 +52,16 @@ class VentasCollectionViewController: UICollectionViewController{
     //}
     
     func loadData(){
+        let alert = UIAlertController(title: "Error", message: "Ocurrio un error", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        
         let result = productoViewModel.GetAll()
         if result.Correct {
             productos = result.Objects! as! [Producto]
             self.collectionView.reloadData()
         }else{
-            //alert
+            self.present(alert, animated: false)
         }
     }
     
@@ -124,7 +129,6 @@ class VentasCollectionViewController: UICollectionViewController{
         cell.ImageView.layer.cornerRadius = 20
         cell.container.layer.cornerRadius = 20
         
-        //cell.ButtonAdd
         cell.ButtonAdd.tag = indexPath.row
         cell.ButtonAdd.addTarget(self, action: #selector(self.funcAdd), for: .touchUpInside)
         
@@ -134,28 +138,57 @@ class VentasCollectionViewController: UICollectionViewController{
     @objc func funcAdd(sender : UIButton){
         //print(sender.tag)
         //print(productos[sender.tag].IdProducto)
-        let ventaViewModel = VentaViewModel()
+        
         var result = ventaViewModel.GetByIdProducto(idProducto: productos[sender.tag].IdProducto)
         if result.Correct {
-            var ventaProducto = result.Object! as! VentaProducto
-            var ventaUpdate = VentaProducto()
-            ventaUpdate.IdVentaProducto = ventaProducto.IdVentaProducto
-            ventaUpdate.Cantidad = ventaProducto.Cantidad + 1
-            ventaUpdate.Producto.IdProducto = productos[sender.tag].IdProducto
-            result = ventaViewModel.UpdateCantidad(ventaProducto: ventaUpdate)
-            if result.Correct {
-                print("cantidad añadida")
-                self.performSegue(withIdentifier: "CarritoSegue", sender: self)
-            }
+            UpdateCarrito(result: result)
+//            var ventaProducto = result.Object! as! VentaProducto
+//            var ventaUpdate = VentaProducto()
+//            ventaUpdate.IdVentaProducto = ventaProducto.IdVentaProducto
+//            ventaUpdate.Cantidad = ventaProducto.Cantidad + 1
+//            ventaUpdate.Producto.IdProducto = productos[sender.tag].IdProducto
+//            result = ventaViewModel.UpdateCantidad(ventaProducto: ventaUpdate)
+//            if result.Correct {
+//                print("cantidad añadida")
+//                self.performSegue(withIdentifier: "CarritoSegue", sender: self)
+//            }
         }else{
-            var producto = Producto()
-            producto.IdProducto = productos[sender.tag].IdProducto
-            var ventaProducto = VentaProducto(IdVentaProducto: 0, Cantidad: 1, Producto: producto, Total: 0.0)
-            result = ventaViewModel.Add(ventaProducto: ventaProducto)
-            if result.Correct {
-                print("añadido")
-                self.performSegue(withIdentifier: "CarritoSegue", sender: self)
-            }
+            AddCarrito(IdProducto: productos[sender.tag].IdProducto)
+//            var producto = Producto()
+//            producto.IdProducto = productos[sender.tag].IdProducto
+//            var ventaProducto = VentaProducto(IdVentaProducto: 0, Cantidad: 1, Producto: producto, Total: 0.0)
+//            result = ventaViewModel.Add(ventaProducto: ventaProducto)
+//            if result.Correct {
+//                print("añadido")
+//                self.performSegue(withIdentifier: "CarritoSegue", sender: self)
+//            }
+        }
+    }
+    
+    func UpdateCarrito(result : Result){
+        let alert = UIAlertController(title: "Añadido", message: "Su producto ha sido añadido", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        
+        var ventaProducto = result.Object! as! VentaProducto
+        ventaProducto.Cantidad = ventaProducto.Cantidad + 1
+        let newresult = ventaViewModel.UpdateCantidad(ventaProducto: ventaProducto)
+        if newresult.Correct {
+            self.present(alert, animated: false)
+        }
+    }
+    
+    func AddCarrito(IdProducto : Int){
+        let alert = UIAlertController(title: "Añadido", message: "Su producto ha sido añadido", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        
+        var producto = Producto()
+        producto.IdProducto = IdProducto
+        let ventaProducto = VentaProducto(IdVentaProducto: 0, Cantidad: 1, Producto: producto, Total: 0.0)
+        let result = ventaViewModel.Add(ventaProducto: ventaProducto)
+        if result.Correct {
+            self.present(alert, animated: false)
         }
     }
 

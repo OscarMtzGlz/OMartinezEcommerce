@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4CF99A8D737FB3748DD2DD10 /* Pods_OMartinezEcommerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6831F5B7B9467D5306CF392 /* Pods_OMartinezEcommerce.framework */; };
+		EB10BAAC2982F513007DE20B /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB10BAAB2982F513007DE20B /* LogOutViewController.swift */; };
 		EB339DF42966025300E01D2B /* DepartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB339DF22966025300E01D2B /* DepartTableViewCell.swift */; };
 		EB339DF52966025300E01D2B /* DepartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB339DF32966025300E01D2B /* DepartTableViewCell.xib */; };
 		EB339DF72966030800E01D2B /* DepartamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB339DF62966030800E01D2B /* DepartamentViewController.swift */; };
@@ -45,7 +46,6 @@
 		EBA07EF02977354D00BE37C8 /* OMartinezEcommerceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07EEF2977354D00BE37C8 /* OMartinezEcommerceTests.swift */; };
 		EBA07F0129774B1F00BE37C8 /* OMartinezEcommerceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07F0029774B1F00BE37C8 /* OMartinezEcommerceUITests.swift */; };
 		EBA07F0329774B1F00BE37C8 /* OMartinezEcommerceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA07F0229774B1F00BE37C8 /* OMartinezEcommerceUITestsLaunchTests.swift */; };
-		EBA478172979F0BE00623D31 /* OMartinezEcommerce2.sql in Resources */ = {isa = PBXBuildFile; fileRef = EBA478162979F0BE00623D31 /* OMartinezEcommerce2.sql */; };
 		EBACF3F92971DDD200AB97EE /* DepartamentoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACF3F82971DDD200AB97EE /* DepartamentoCollectionViewController.swift */; };
 		EBAEB899296F198E0020263F /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBAEB898296F198E0020263F /* iOSDropDown.framework */; };
 		EBB115B4296DCF5200918DF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBB115B3296DCF5200918DF7 /* GoogleService-Info.plist */; };
@@ -67,6 +67,7 @@
 		EBCA56DE295E694800F901BC /* ProductoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA56DC295E694800F901BC /* ProductoTableViewCell.swift */; };
 		EBCA56DF295E694800F901BC /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBCA56DD295E694800F901BC /* TableViewCell.xib */; };
 		EBCA56E1295E6A5D00F901BC /* GetAllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA56E0295E6A5D00F901BC /* GetAllTableViewController.swift */; };
+		EBCC8756298473FD004B0570 /* OMartinezEcommerce2.sql in Resources */ = {isa = PBXBuildFile; fileRef = EBCC8755298473FD004B0570 /* OMartinezEcommerce2.sql */; };
 		EBDB27E329679B2200DA15F5 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDB27E229679B2200DA15F5 /* Usuario.swift */; };
 		EBDB27E729679EA500DA15F5 /* Rol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDB27E629679EA500DA15F5 /* Rol.swift */; };
 		EBE4C082297F09B500A69888 /* DetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4C081297F09B500A69888 /* DetalleViewController.swift */; };
@@ -93,6 +94,7 @@
 		16EEED9872DF317CA80EE882 /* Pods-OMartinezEcommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMartinezEcommerce.release.xcconfig"; path = "Target Support Files/Pods-OMartinezEcommerce/Pods-OMartinezEcommerce.release.xcconfig"; sourceTree = "<group>"; };
 		2B625A4CD8B9C9DCAF3780D2 /* Pods-OMartinezEcommerce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMartinezEcommerce.debug.xcconfig"; path = "Target Support Files/Pods-OMartinezEcommerce/Pods-OMartinezEcommerce.debug.xcconfig"; sourceTree = "<group>"; };
 		A6831F5B7B9467D5306CF392 /* Pods_OMartinezEcommerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OMartinezEcommerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB10BAAB2982F513007DE20B /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		EB339DF22966025300E01D2B /* DepartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartTableViewCell.swift; sourceTree = "<group>"; };
 		EB339DF32966025300E01D2B /* DepartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartTableViewCell.xib; sourceTree = "<group>"; };
 		EB339DF62966030800E01D2B /* DepartamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartamentViewController.swift; sourceTree = "<group>"; };
@@ -134,7 +136,6 @@
 		EBA07EFE29774B1F00BE37C8 /* OMartinezEcommerceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OMartinezEcommerceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA07F0029774B1F00BE37C8 /* OMartinezEcommerceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMartinezEcommerceUITests.swift; sourceTree = "<group>"; };
 		EBA07F0229774B1F00BE37C8 /* OMartinezEcommerceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMartinezEcommerceUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		EBA478162979F0BE00623D31 /* OMartinezEcommerce2.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = OMartinezEcommerce2.sql; sourceTree = "<group>"; };
 		EBACF3F82971DDD200AB97EE /* DepartamentoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartamentoCollectionViewController.swift; sourceTree = "<group>"; };
 		EBAEB898296F198E0020263F /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB115B3296DCF5200918DF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -152,6 +153,7 @@
 		EBCA56DC295E694800F901BC /* ProductoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoTableViewCell.swift; sourceTree = "<group>"; };
 		EBCA56DD295E694800F901BC /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		EBCA56E0295E6A5D00F901BC /* GetAllTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTableViewController.swift; sourceTree = "<group>"; };
+		EBCC8755298473FD004B0570 /* OMartinezEcommerce2.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = OMartinezEcommerce2.sql; sourceTree = SOURCE_ROOT; };
 		EBDB27E229679B2200DA15F5 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		EBDB27E629679EA500DA15F5 /* Rol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rol.swift; sourceTree = "<group>"; };
 		EBE4C081297F09B500A69888 /* DetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				EB585505296DE8310014B131 /* SingupViewController.swift */,
 				EBBDEA12296F814E0042DF35 /* LoginFormViewController.swift */,
+				EB10BAAB2982F513007DE20B /* LogOutViewController.swift */,
 			);
 			path = LoginSingup;
 			sourceTree = "<group>";
@@ -294,7 +297,7 @@
 				EB9DCCCA295BC3100016D740 /* Model */,
 				EB9DCCB1295BC2D20016D740 /* AppDelegate.swift */,
 				EB9DCCB3295BC2D20016D740 /* SceneDelegate.swift */,
-				EBA478162979F0BE00623D31 /* OMartinezEcommerce2.sql */,
+				EBCC8755298473FD004B0570 /* OMartinezEcommerce2.sql */,
 				EB9DCCBD295BC2D40016D740 /* Assets.xcassets */,
 				EB9DCCC2295BC2D40016D740 /* Info.plist */,
 				EBB115B3296DCF5200918DF7 /* GoogleService-Info.plist */,
@@ -338,6 +341,7 @@
 		EB9DCCCC295BC32C0016D740 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EB8B4653298188100096A02B /* CarritoTableViewCell.xib */,
 				EB9AC2CB2970904300B5401E /* VentasCollectionViewCell.xib */,
 				EB9D9CD32968F0670023ABA1 /* UsuarioTableViewCell.xib */,
 				EB9DCCBF295BC2D40016D740 /* LaunchScreen.storyboard */,
@@ -446,7 +450,6 @@
 			children = (
 				EBC8B06329806C7D004B41B0 /* CarritoViewController.swift */,
 				EB8B4652298188100096A02B /* CarritoTableViewCell.swift */,
-				EB8B4653298188100096A02B /* CarritoTableViewCell.xib */,
 			);
 			path = Carrito;
 			sourceTree = "<group>";
@@ -587,12 +590,12 @@
 				EB8B4655298188100096A02B /* CarritoTableViewCell.xib in Resources */,
 				EB9D9CD52968F0670023ABA1 /* UsuarioTableViewCell.xib in Resources */,
 				EB339DF52966025300E01D2B /* DepartTableViewCell.xib in Resources */,
+				EBCC8756298473FD004B0570 /* OMartinezEcommerce2.sql in Resources */,
 				EB9DCCC1295BC2D40016D740 /* LaunchScreen.storyboard in Resources */,
 				EBCA56DF295E694800F901BC /* TableViewCell.xib in Resources */,
 				EB9DCCBE295BC2D40016D740 /* Assets.xcassets in Resources */,
 				EB9AC2CD2970904300B5401E /* VentasCollectionViewCell.xib in Resources */,
 				EB9DCCB9295BC2D20016D740 /* Main.storyboard in Resources */,
-				EBA478172979F0BE00623D31 /* OMartinezEcommerce2.sql in Resources */,
 				EBB115B4296DCF5200918DF7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,6 +688,7 @@
 				EBCA56DE295E694800F901BC /* ProductoTableViewCell.swift in Sources */,
 				EBBDEA13296F814E0042DF35 /* LoginFormViewController.swift in Sources */,
 				EB49B1D0295CF21700D7BF5E /* Area.swift in Sources */,
+				EB10BAAC2982F513007DE20B /* LogOutViewController.swift in Sources */,
 				EB49B1CC295CF19600D7BF5E /* Proveedor.swift in Sources */,
 				EB9DCCBC295BC2D20016D740 /* OMartinezEcommerce.xcdatamodeld in Sources */,
 				EBC8B05F29804487004B41B0 /* VentaViewModel.swift in Sources */,

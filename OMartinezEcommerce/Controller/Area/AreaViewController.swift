@@ -46,12 +46,16 @@ class AreaViewController: UIViewController {
     }
     
     func loadData(){
+        let alert = UIAlertController(title: "Error", message: "Ocurrio un error", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        
         let result = areaViewModel.GetAll()
         if result.Correct {
             areas = result.Objects! as! [Area]
             self.collectionView.reloadData()
         }else{
-            //alert
+            self.present(alert, animated: false)
         }
     }
 
@@ -89,7 +93,15 @@ extension AreaViewController : UICollectionViewDelegate, UICollectionViewDataSou
         
         cell.NombreView.text = areas[indexPath.row].Nombre
         cell.CampoView.text = ""
-        cell.ImageView.image = UIImage(systemName: "photo.artframe")
+        if areas[indexPath.row].Nombre == "Linea blanca"{
+            cell.ImageView.image = UIImage(named: "LineaBlanca")
+        }else if areas[indexPath.row].Nombre == "Electronicos" {
+            cell.ImageView.image = UIImage(named: "Electronicos")
+        }else if areas[indexPath.row].Nombre == "Muebleria" {
+            cell.ImageView.image = UIImage(named: "Muebleria")
+        }else{
+            cell.ImageView.image = UIImage(systemName: "photo.artframe")
+        }
         cell.CampoOp.text = ""
         cell.ImageView.layer.cornerRadius = 20
         cell.container.layer.cornerRadius = 20

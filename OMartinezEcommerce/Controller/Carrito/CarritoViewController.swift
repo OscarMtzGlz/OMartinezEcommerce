@@ -34,17 +34,24 @@ class CarritoViewController: UIViewController {
     }
     
     func loadData(){
+        let alert = UIAlertController(title: "Error", message: "Ocurrio un erro", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        
         let result = ventaViewModel.GetAll()
         if result.Correct {
             ventaproductos = result.Objects! as! [VentaProducto]
             //TotalView.text = "Total: $\(TotalVenta)"
             TotalVenta = 0.0
             tableView.reloadData()
+        }else{
+            self.present(alert, animated: false)
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         loadData()
+        TotalView.text = "Total: 0.0"
     }
     
     @IBAction func FinalizarAction(_ sender: UIButton) {
@@ -100,29 +107,44 @@ extension CarritoViewController : UITableViewDelegate, UITableViewDataSource {
 extension CarritoViewController: SwipeTableViewCellDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         
+        let alertCorrect = UIAlertController(title: "Eliminado", message: "Producto eliminado del carrito", preferredStyle: .alert)
+        let alertIncorrect = UIAlertController(title: "No Eliminado", message: "El producto no pudo ser eliminado del carrito", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default){(action) in
+            let result = self.ventaViewModel.GetAll()
+            if result.Correct {
+                self.ventaproductos = result.Objects! as! [VentaProducto]
+                self.TotalView.text = "Totoal: $\(self.ventaproductos[indexPath.row].Total)"
+            }
+        }
+        alertCorrect.addAction(ok)
+        alertIncorrect.addAction(ok)
+        
         guard orientation == .right else {return nil}
         let deleteAction = SwipeAction(style: .destructive, title: "Eliminar") { action, indexPath in
             self.IdVentaProducto = self.ventaproductos[indexPath.row].IdVentaProducto
             
-            let result = self.ventaViewModel.Delete(idVentaProducto: self.IdVentaProducto)
-            let alertCorrect = UIAlertController(title: "Eliminado", message: "Producto eliminado del carrito", preferredStyle: .alert)
-            let alertIncorrect = UIAlertController(title: "No Eliminado", message: "El producto no pudo ser eliminado del carrito", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "OK", style: .default){(action) in
-                let result = self.ventaViewModel.GetAll()
-                if result.Correct {
-                    self.ventaproductos = result.Objects! as! [VentaProducto]
-                    self.TotalView.text = "Totoal: $\(self.ventaproductos[indexPath.row].Total)"
+            let result = self.ventaViewModel.GetByIdVenta(idVenta: self.IdVentaProducto)
+            if result.Correct {
+                var ventaProducto = result.Object! as! VentaProducto
+                if ventaProducto.Cantidad > 1 {
+                    ventaProducto.Cantidad = ventaProducto.Cantidad - 1
+                    let resultUpdate = self.ventaViewModel.UpdateCantidad(ventaProducto: ventaProducto)
+                    if resultUpdate.Correct {
+                        self.present(alertCorrect, animated: false)
+                    }else{
+                        self.present(alertIncorrect, animated: false)
+                    }
+                }else{
+                    let resultDelete = self.ventaViewModel.Delete(idVentaProducto: self.IdVentaProducto)
+                    if resultDelete.Correct {
+                        //self.TotalVenta = self.ventaproductos[indexPath.row].Total
+                        self.present(alertCorrect, animated: false)
+                    }else{
+                        self.present(alertIncorrect, animated: false)
+                    }
                 }
             }
-            alertCorrect.addAction(ok)
-            alertIncorrect.addAction(ok)
             
-            if result.Correct {
-                //self.TotalVenta = self.ventaproductos[indexPath.row].Total
-                self.present(alertCorrect, animated: false)
-            }else{
-                self.present(alertIncorrect, animated: false)
-            }
             self.loadData()
         }
         return [deleteAction]

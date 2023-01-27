@@ -91,7 +91,9 @@ class ProductoFormController: UIViewController, UIImagePickerControllerDelegate,
                 PrecioUnitarioField.text = String(producto.PrecioUnitario)
                 StockField.text = String(producto.Stock)
                 ProveedorDropDown.text = producto.Proveedor.Nombre
+                self.IdProveedor = producto.Proveedor.IdProveedor
                 DepartamentoDropDown.text = producto.Departamento.Nombre
+                self.IdDepartamento = producto.Departamento.IdDepartamento
                 DescripcionField.text = producto.Descripcion
                 if producto.Imagen == nil {
                     imageView.image = UIImage(systemName: "photo.artframe")

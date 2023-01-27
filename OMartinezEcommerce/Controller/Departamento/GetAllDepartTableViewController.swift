@@ -31,12 +31,16 @@ class GetAllDepartTableViewController: UITableViewController {
     }
     
     func loadData(){
+        let alert = UIAlertController(title: "Error", message: "Ocurrio un error", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        
         let result = departamentoViewModel.GetAll()
         if result.Correct {
             departamentos = result.Objects! as! [Departamento]
             tableView.reloadData()
         }else{
-            //alert
+            self.present(alert, animated: false)
         }
     }
 

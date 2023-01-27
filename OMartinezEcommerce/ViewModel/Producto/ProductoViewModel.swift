@@ -45,7 +45,7 @@ class ProductoViewModel {
     func Update(producto : Producto) -> Result{
         var result = Result()
         let context = DB.init()
-        let query = "UPDATE Producto SET Nombre = '\(producto.Nombre)', PrecioUnitario = \(producto.PrecioUnitario), Stock = \(producto.Stock), IdProveedor = \(producto.Proveedor.IdProveedor), IdDepartamento = \(producto.Departamento.IdDepartamento), Descripcion = '\(producto.Descripcion)' WHERE IdProducto = \(producto.IdProducto)"
+        let query = "UPDATE Producto SET Nombre = '\(producto.Nombre)', PrecioUnitario = \(producto.PrecioUnitario), Stock = \(producto.Stock), IdProveedor = \(producto.Proveedor.IdProveedor), IdDepartamento = \(producto.Departamento.IdDepartamento), Descripcion = '\(producto.Descripcion)', Imagen = '\(producto.Imagen)' WHERE IdProducto = \(producto.IdProducto)"
         var statement : OpaquePointer? = nil
         do{
             if try sqlite3_prepare_v2(context.db, query, -1, &statement, nil) == SQLITE_OK {

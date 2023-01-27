@@ -152,6 +152,32 @@ class VentaViewModel{
         return result
     }
     
+    func GetByIdVenta(idVenta : Int) -> Result{
+        var result = Result()
+        let context = DB.init()
+        let query = "SELECT IdVentaProducto,Cantidad FROM VentaProducto WHERE IdVentaProducto = \(idVenta)"
+        var statement : OpaquePointer? = nil
+        do{
+            if try sqlite3_prepare_v2(context.db, query, -1, &statement, nil) == SQLITE_OK {
+                var ventaProducto = VentaProducto()
+                if sqlite3_step(statement) == SQLITE_ROW {
+                    ventaProducto.IdVentaProducto = Int(sqlite3_column_int(statement, 0))
+                    ventaProducto.Cantidad = Int(sqlite3_column_int(statement, 1))
+                    result.Object = ventaProducto
+                    result.Correct = true
+                }
+            }
+        }catch let error{
+            result.Correct = false
+            result.Ex = error
+            result.ErrorMessage = error.localizedDescription
+        }
+        sqlite3_finalize(statement)
+        sqlite3_close(context.db)
+        return result
+    }
+    
+    //Venta
     func AddVenta(venta: Venta) -> Result {
         var result = Result()
         let context = DB.init()

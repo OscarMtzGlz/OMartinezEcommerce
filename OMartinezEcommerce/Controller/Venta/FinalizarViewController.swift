@@ -23,7 +23,7 @@ class FinalizarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Totallabel.text = "Totol: $"+String(total)
+        Totallabel.text = "Total: $"+String(total)
         CantidadProductoslabel.text = "Numero de Productos:"+String(cantidadProductos)
         
         MetodoPagoDropDown.optionArray = [String]()
@@ -38,12 +38,18 @@ class FinalizarViewController: UIViewController {
     }
     
     func loadData(){
+        let alert = UIAlertController(title: "Error", message: "Ocurrio un error", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        
         let result = metodopagoViewModel.GetAll()
         if result.Correct {
             for metodopago in result.Objects as! [MetodoPago] {
                 MetodoPagoDropDown.optionArray.append(metodopago.Metodo)
                 MetodoPagoDropDown.optionIds?.append(metodopago.IdMetodoPago)
             }
+        }else{
+            self.present(alert, animated: false)
         }
     }
     
@@ -54,7 +60,8 @@ class FinalizarViewController: UIViewController {
         if result.Correct {
             result = ventaViewModel.DeleteCarrito()
             if result.Correct{
-                self.dismiss(animated: true)
+                self.navigationController?.popViewController(animated: true)
+                //self.dismiss(animated: true)
             }
         }
     }

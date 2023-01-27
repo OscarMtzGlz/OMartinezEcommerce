@@ -31,12 +31,16 @@ class UGetAllTableViewController: UITableViewController {
     }
     
     func loadData(){
+        let alert = UIAlertController(title: "Error", message: "Ocurrio un error", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        
         let result = usuarioViewModel.GetAll()
         if result.Correct {
             usuarios = result.Objects! as! [UsuarioC]
             tableView.reloadData()
         }else{
-            //alert
+            self.present(alert, animated: false)
         }
     }
 

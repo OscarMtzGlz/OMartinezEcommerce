@@ -34,10 +34,13 @@ class DetalleViewController: UIViewController {
     }
     
     func loadData(){
+        let alert = UIAlertController(title: "Error", message: "Ocurrio un error", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        
         let result = productoViewModel.GetById(idProducto: self.IdProducto)
         if result.Correct {
             producto = result.Object! as! Producto
-
             Nombrelbl.text = producto.Nombre
             Preciolbl.text = "Precio: $\(producto.PrecioUnitario)"
             stocklbl.text = "Unidades: \(producto.Stock)"
@@ -51,6 +54,8 @@ class DetalleViewController: UIViewController {
                 ImageView.image = UIImage(data: imageData!)
             }
             Cantidadtxt.text = "1"
+        }else{
+            self.present(alert, animated: false)
         }
     }
     

@@ -43,10 +43,16 @@ class DepartamentoCollectionViewController: UICollectionViewController {
     }
     
     func loadData(){
+        let alert = UIAlertController(title: "Error", message: "Ocurrio un error", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        
         let result = departamentoViewModel.GetByIdArea(self.idArea)
         if result.Correct {
             departamentos = result.Objects! as! [Departamento]
             self.collectionView.reloadData()
+        }else{
+            self.present(alert, animated: false)
         }
     }
 
@@ -84,7 +90,15 @@ class DepartamentoCollectionViewController: UICollectionViewController {
         cell.NombreView.text = departamentos[indexPath.row].Nombre
         cell.CampoView.text = ""
         cell.CampoOp.text = ""
-        cell.ImageView.image = UIImage(systemName: "photo.artframe")
+        if departamentos[indexPath.row].Nombre == "Refrigeradores"{
+            cell.ImageView.image = UIImage(named: "LineaBlanca")
+        }else if departamentos[indexPath.row].Nombre == "Televisores" {
+            cell.ImageView.image = UIImage(named: "Electronicos")
+        }else if departamentos[indexPath.row].Nombre == "Salas" {
+            cell.ImageView.image = UIImage(named: "Muebleria")
+        }else{
+            cell.ImageView.image = UIImage(systemName: "photo.artframe")
+        }
         cell.ImageView.layer.cornerRadius = 20
         cell.container.layer.cornerRadius = 20
         cell.ButtonAdd.isHidden = true
